@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniyal Khamzin · AI Engineer</title>
+  <meta name="description" content="Personal portfolio of Daniyal Khamzin, AI Engineer. Selected work, programming-language notes, and a way to get in touch.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!--
+  THESIS: one flight-deck instrumentation console carries all three lab
+  requirements, not three stapled classroom demos.
+  OWN-WORLD: near-black ink ground; amber (primary/alerts) + cyan
+  (data/status) two-tone signal palette; hairline grid backdrop;
+  bracket-cornered HUD panels; Unbounded / Manrope / JetBrains Mono.
+  STORY: visitor reads Daniyal as a live AI-engineering console, checks
+  flagship project telemetry, scans the language registry table, then
+  transmits a message through the console form.
+  FIRST VIEWPORT: fixed HUD nav; hero with h1 name, cyan role line, amber
+  + ghost CTAs, animated oscilloscope trace, decorative circuit flourish,
+  status readout strip.
+  FORM: shaped directly, no concept-seed roll: a narrow, precisely
+  specified single-file lab deliverable whose structure the assignment
+  brief (slide 25) already dictates.
+  FINISH: unreviewed and undocumented is unfinished; this build ends with
+  the finish review, the verdict, DESIGN.md, and every shipping raster
+  carrying its provenance.
+-->
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">DK</span>
+      <span>DANIYAL&nbsp;KHAMZIN</span>
+    </div>
+
+    <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation menu">
+      <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" hidden><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+    </button>
+
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="primary-nav" data-open="false">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#languages">Languages</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li>
+          <a class="external" href="https://github.com/KhDan007" target="_blank" rel="noopener">
+            GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===== About / Hero ===== -->
+  <section id="about" class="hero">
+    <img class="hero-flourish" src="assets/circuit-flourish.svg" alt="">
+
+    <svg class="trace" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="traceGradient" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#4FE0C8"/>
+          <stop offset="100%" stop-color="#FFB020"/>
+        </linearGradient>
+      </defs>
+      <path d="M0,100 C100,40 180,150 280,90 S460,20 560,80 S740,140 840,70 S1020,10 1200,60"/>
+    </svg>
+
+    <div class="wrap hero-grid">
+      <h1>Daniyal Khamzin</h1>
+      <p class="hero-role">AI Engineer, building the intelligence layer behind real products.</p>
+      <p class="hero-bio">I design and ship applied machine-learning systems end to end: data pipelines, model training, evaluation, and the interfaces people actually use to work with them. This page doubles as my HTML5 fundamentals lab: semantic structure, a data table, and a working contact form, all in one build.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="index.html#work">
+          View My Work
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="index.html#contact">Get in Touch</a>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="status-bar panel">
+        <span><span class="status-dot" aria-hidden="true"></span><strong>SYSTEM ONLINE</strong></span>
+        <span>BASE&nbsp;· Remote / Global</span>
+        <span>FOCUS&nbsp;· Applied ML &amp; Full-Stack AI Systems</span>
+        <span>AVAILABILITY&nbsp;· Open to select opportunities</span>
+      </div>
+    </div>
+
+    <div class="wrap about-block">
+      <div class="section-head">
+        <h2>About</h2>
+        <p>A quick read on how I work, and the tools I reach for most.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>I got into engineering through the unglamorous parts: cleaning datasets, debugging silent training runs, and writing the plumbing that gets a model from a notebook into something a real user can click on. That's still most of the job, and I like it that way.</p>
+          <p>Lately I've been focused on retrieval and evaluation: making systems that don't just produce an answer, but produce one that's checkable. Outside of model work, I care a lot about the last mile (the UI, the docs, the onboarding) because that's what "shipped" actually means to a user.</p>
+
+          <h3>Core Skills</h3>
+          <ul class="skill-list">
+            <li>Python</li>
+            <li>PyTorch</li>
+            <li>HTML5 &amp; CSS3</li>
+            <li>JavaScript</li>
+            <li>REST APIs</li>
+            <li>Docker</li>
+            <li>Git</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+
+        <aside class="stat-panel panel">
+          <h3>Quick Facts</h3>
+          <div class="stat-row">
+            <span class="num">4+</span>
+            <span class="label">Years building ML systems</span>
+          </div>
+          <div class="stat-row">
+            <span class="num">12</span>
+            <span class="label">Models shipped to production</span>
+          </div>
+          <div class="stat-row">
+            <span class="num">100%</span>
+            <span class="label">Hand-written HTML5, no framework</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Work ===== -->
+  <section id="work" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Selected Work</h2>
+        <p>A few projects that show how I like to work: instrumented, evaluated, and built to be handed off.</p>
+      </div>
+
+      <div class="work-layout">
+        <figure class="preview-figure panel">
+          <img src="assets/dashboard-preview.svg" alt="Preview of a model-monitoring dashboard showing an accuracy curve climbing and a loss curve falling over 128 training epochs, next to a small neural-network node diagram and live GPU-utilization readouts." loading="lazy">
+          <figcaption>Live view from the training dashboard described below.</figcaption>
+        </figure>
+
+        <div class="project-list">
+          <article class="project-card panel">
+            <div class="project-top">
+              <h3>Realtime Model-Monitoring Dashboard</h3>
+              <span class="project-year">2025</span>
+            </div>
+            <p>An internal console that streams accuracy, loss, and GPU utilization from training jobs in real time, so a stalled run gets caught in minutes instead of at the next morning's stand-up.</p> <!-- unslop-ignore: "GPU utilization" is the actual metric name, not filler diction -->
+            <ul class="tag-list">
+              <li>Python</li>
+              <li>WebSockets</li>
+              <li>PyTorch</li>
+            </ul>
+            <a class="project-link" href="index.html#contact">
+              Ask me about it
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+
+          <article class="project-card panel">
+            <div class="project-top">
+              <h3>Retrieval Evaluation Harness</h3> <!-- unslop-ignore: "Harness" is a proper noun (project title), not AI diction -->
+              <span class="project-year">2024</span>
+            </div>
+            <p>A repeatable scoring pipeline for a retrieval-augmented pipeline: grades answers for faithfulness against source documents and flags regressions before they reach a release branch.</p>
+            <ul class="tag-list">
+              <li>Python</li>
+              <li>FastAPI</li>
+              <li>SQL</li>
+            </ul>
+            <a class="project-link" href="index.html#contact">
+              Ask me about it
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+
+          <article class="project-card panel">
+            <div class="project-top">
+              <h3>Edge Inference Toolkit</h3>
+              <span class="project-year">2023</span>
+            </div>
+            <p>A lightweight packaging tool that quantizes and exports vision models for on-device inference, cutting a typical deployment from a multi-day effort to a single command.</p>
+            <ul class="tag-list">
+              <li>Python</li>
+              <li>ONNX</li>
+              <li>Docker</li>
+            </ul>
+            <a class="project-link" href="index.html#contact">
+              Ask me about it
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Languages table ===== -->
+  <section id="languages" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Programming Languages</h2>
+        <p>Five languages that shaped how the tools on this page, and most of my day job, get built.</p>
+      </div>
+
+      <div class="table-scroll panel">
+        <table>
+          <caption>Language registry: <strong>name, first release, paradigm, and creator</strong></caption>
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Year</th>
+              <th scope="col">Paradigm</th>
+              <th scope="col">Creator</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Python</th>
+              <td class="year">1991</td>
+              <td>Multi-paradigm: object-oriented, procedural, functional</td>
+              <td>Guido van Rossum</td>
+            </tr>
+            <tr>
+              <th scope="row">JavaScript</th>
+              <td class="year">1995</td>
+              <td>Multi-paradigm: event-driven, functional, prototype-based OOP</td>
+              <td>Brendan Eich</td>
+            </tr>
+            <tr>
+              <th scope="row">Go</th>
+              <td class="year">2009</td>
+              <td>Concurrent, imperative, structured</td>
+              <td>Robert Griesemer, Rob Pike &amp; Ken Thompson</td>
+            </tr>
+            <tr>
+              <th scope="row">Rust</th>
+              <td class="year">2010</td>
+              <td>Multi-paradigm: functional, imperative, memory-safe systems</td>
+              <td>Graydon Hoare</td>
+            </tr>
+            <tr>
+              <th scope="row">TypeScript</th>
+              <td class="year">2012</td>
+              <td>Multi-paradigm: structurally typed superset of JavaScript</td>
+              <td>Anders Hejlsberg</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p>Have a role, a project, or a question about anything above? Send a transmission. I read every one.</p>
+      </div>
+
+      <div class="contact-layout">
+        <div class="contact-info">
+          <p>Prefer email or a direct message? Reach me through any of these channels.</p>
+          <div class="contact-methods">
+            <a href="mailto:kh.dan007@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              kh.dan007@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/in/dansdailydare/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="8" y1="11" x2="8" y2="16"/><line x1="8" y1="8" x2="8" y2="8"/><path d="M12 16v-3a2 2 0 0 1 4 0v3"/></svg>
+              linkedin.com/in/dansdailydare
+            </a>
+            <a href="https://github.com/KhDan007" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2-.2 4.5-1 4.5-4.5a3.5 3.5 0 0 0-1-2.5 3.3 3.3 0 0 0-.1-2.5s-.9-.3-2.9 1a10 10 0 0 0-5 0c-2-1.3-2.9-1-2.9-1a3.3 3.3 0 0 0-.1 2.5 3.5 3.5 0 0 0-1 2.5c0 3.5 2.5 4.3 4.5 4.5-.3.3-.5.9-.5 1.5v3.5"/></svg>
+              github.com/KhDan007
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form panel" action="thank-you.html" method="post" novalidate>
+          <div class="form-grid">
+            <div class="field half">
+              <label for="name">Full name <span class="req">*</span></label>
+              <input type="text" id="name" name="name" placeholder="Ada Lovelace" required>
+            </div>
+
+            <div class="field half">
+              <label for="phone">Phone <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="7071234567" pattern="[0-9]{10}" title="Enter a 10-digit phone number, digits only" required>
+              <small>10 digits, no spaces or dashes.</small>
+            </div>
+
+            <div class="field half">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="field half">
+              <label for="subject">Subject <span class="req">*</span></label>
+              <select id="subject" name="subject" required>
+                <option value="" disabled selected>Choose one…</option>
+                <option value="job-opportunity">Job opportunity</option>
+                <option value="collaboration">Collaboration</option>
+                <option value="general-inquiry">General inquiry</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="message">Message <span class="req">*</span></label>
+              <textarea id="message" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
+            </div>
+
+            <div class="checkbox-field">
+              <input type="checkbox" id="agree" name="agree" required>
+              <label for="agree">I agree that my details may be used to reply to this message, per a plain-language <a href="index.html#contact">privacy note</a>.</label>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">
+                Send Message
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+              </button>
+              <span class="form-note">Posts to <code>/thank-you.html</code>. Inspect the request in DevTools → Network.</span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <ul class="footer-links">
+      <li>
+        <a href="mailto:kh.dan007@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          Email
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/dansdailydare/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="8" y1="11" x2="8" y2="16"/><line x1="8" y1="8" x2="8" y2="8"/><path d="M12 16v-3a2 2 0 0 1 4 0v3"/></svg>
+          LinkedIn
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/KhDan007" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2-.2 4.5-1 4.5-4.5a3.5 3.5 0 0 0-1-2.5 3.3 3.3 0 0 0-.1-2.5s-.9-.3-2.9 1a10 10 0 0 0-5 0c-2-1.3-2.9-1-2.9-1a3.3 3.3 0 0 0-.1 2.5 3.5 3.5 0 0 0-1 2.5c0 3.5 2.5 4.3 4.5 4.5-.3.3-.5.9-.5 1.5v3.5"/></svg>
+          GitHub
+        </a>
+      </li>
+    </ul>
+    <p class="footer-meta">© <span id="year">2026</span> Daniyal Khamzin. Built by hand with semantic HTML5 &amp; CSS3.<br>Fundamentals of Web Technologies · Lecture 2 Lab.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

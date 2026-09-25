@@ -1,0 +1,1 @@
+HTTPS is HyperText Transfer Protocol Secure, a safe way for web browser to talk to a website so noone can spy on or steal data.

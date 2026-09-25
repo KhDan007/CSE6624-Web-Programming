@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Received · Daniyal Khamzin</title>
+  <meta name="description" content="Confirmation page for the contact form on Daniyal Khamzin's portfolio.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .confirm-wrap {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 6rem 1.5rem;
+    }
+    .confirm-panel {
+      max-width: 34rem;
+      width: 100%;
+      padding: 2.75rem;
+      text-align: left;
+    }
+    .confirm-panel .status-dot { margin-bottom: 1rem; }
+    .confirm-panel h1 {
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      margin-top: 1rem;
+    }
+    .confirm-panel p {
+      color: var(--ink-dim);
+      margin-top: 1rem;
+      max-width: 44ch;
+    }
+    .confirm-actions {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+<main class="confirm-wrap">
+  <section class="confirm-panel panel">
+    <span class="section-dot" aria-hidden="true"><span class="status-dot"></span></span>
+    <p class="hero-role" style="margin-top:0;">Transmission received</p>
+    <h1>Thanks. Your message is in.</h1>
+    <p>This is a static lab demo, so nothing was actually sent anywhere, but the request that got you here carried your form data in its payload. Open DevTools → Network on the previous page and resubmit to see it.</p>
+    <div class="confirm-actions">
+      <a class="btn btn-primary" href="index.html">
+        Back to the console
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="index.html#work">See the work</a>
+    </div>
+  </section>
+</main>
+</body>
+</html>
