@@ -2,7 +2,8 @@
 
 **Student:** Khamzin Daniyal  
 **Course:** CSE6624 - Introduction to Web Programming  
-**Assignment:** PRACTICE 02 — Semantic HTML5 landmarks
+**Assignment:** PRACTICE 02 — Semantic HTML5 landmarks  
+**Topic:** Satbayev Varsity Volleyball: Middle Blocker Guide  
 
 ---
 
@@ -16,16 +17,16 @@
 
 ## Deliverables & Semantic Landmarks
 
-- **`<header>`**: Contains main title `<h1>` and navigation menu.
-- **`<nav>`**: Semantic navigation bar with `aria-label="Primary"` and placeholder anchor links (`#about`, `#meetings`, `#projects`, `#join`).
+- **`<header>`**: Contains the varsity volleyball title `<h1>` and navigation menu.
+- **`<nav>`**: Semantic navigation bar with `aria-label="Primary"` and placeholder anchor links (`#about`, `#training`, `#tactics`, `#tryouts`).
 - **`<main>`**: Wraps all core content once.
-- **`<article>` & `<section>`**: Structured sections describing the club topic and details with `<h2>` headings.
-- **`<aside>`**: Secondary tangential information ("Quick Tip").
+- **`<article>` & `<section>`**: Structured sections describing the varsity volleyball program, middle blocker defensive drills, and practice schedule with `<h2>` headings.
+- **`<aside>`**: Secondary tangential information ("Quick Tip" on middle blocker footwork and landing mechanics).
 - **`<footer>`**: Attribution and course metadata.
 
 ---
 
 ## AI Disclosure
 
-- **AI used for:** Scaffolding the semantic structure and documentation.
+- **AI used for:** Formatting documentation and customizing content structure to the volleyball topic.
 - **I rewrote/verified:** HTML landmarks, heading hierarchy, anchor IDs, and content.
