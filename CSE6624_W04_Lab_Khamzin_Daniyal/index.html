@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Satbayev Varsity Volleyball — Camp Registration & Roster</title>
+</head>
+<body>
+  <header>
+    <h1>Satbayev Varsity Volleyball Clinic & Roster</h1>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#roster">Current Roster</a></li>
+        <li><a href="#registration">Clinic Registration</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Information table with >= 4 rows -->
+    <section id="roster">
+      <h2>Varsity Starter Roster & Positions</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <th scope="col">Jersey #</th>
+            <th scope="col">Player Name</th>
+            <th scope="col">Position</th>
+            <th scope="col">Academic Year</th>
+            <th scope="col">Specialty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>7</td>
+            <td>Daniyal Khamzin</td>
+            <td>Middle Blocker</td>
+            <td>Year 1</td>
+            <td>Swing Block & Quick-1 Transition</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Arman Serikbay</td>
+            <td>Setter</td>
+            <td>Year 2</td>
+            <td>Tempo Distribution & Back-sets</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Nursultan Bolat</td>
+            <td>Outside Hitter</td>
+            <td>Year 3</td>
+            <td>Pipe Attack & Seam Reception</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Ilyas Kuanysh</td>
+            <td>Opposite</td>
+            <td>Year 1</td>
+            <td>Back-row Attack & Line Shots</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Temirlan Aliyev</td>
+            <td>Libero</td>
+            <td>Year 2</td>
+            <td>Dig Coverage & Serve Receive</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Rich Registration Form -->
+    <section id="registration">
+      <h2>Varsity Tryout & Skills Clinic Registration</h2>
+      <form method="get" action="#">
+        <p>
+          <label for="reg-name">Full Name</label><br />
+          <input id="reg-name" name="name" type="text" placeholder="Enter your full name" required />
+        </p>
+
+        <p>
+          <label for="reg-email">Email Address</label><br />
+          <input id="reg-email" name="email" type="email" placeholder="name@domain.com" required />
+        </p>
+
+        <!-- Fieldset / legend for radio group (study year) -->
+        <fieldset>
+          <legend>Year of Study</legend>
+          <label><input type="radio" name="year" value="1" required /> 1st Year (Freshman)</label><br />
+          <label><input type="radio" name="year" value="2" /> 2nd Year (Sophomore)</label><br />
+          <label><input type="radio" name="year" value="3" /> 3rd Year (Junior)</label><br />
+          <label><input type="radio" name="year" value="4" /> 4th Year (Senior)</label>
+        </fieldset>
+
+        <!-- Select with >= 3 options -->
+        <p>
+          <label for="position-track">Primary Playing Position / Track</label><br />
+          <select id="position-track" name="position">
+            <option value="middle">Middle Blocker (Quick Attack & Net Sealing)</option>
+            <option value="outside">Outside Hitter (Terminal Spikes & Defense)</option>
+            <option value="setter">Setter (Play Calling & Offensive Rhythm)</option>
+            <option value="libero">Libero / Defensive Specialist (Serve Receive)</option>
+          </select>
+        </p>
+
+        <!-- Checkbox required for agreement -->
+        <p>
+          <label>
+            <input type="checkbox" name="agree" required /> 
+            I agree to the varsity athletic conduct code and medical waiver
+          </label>
+        </p>
+
+        <button type="submit">Submit Registration</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>CSE6624 Week 04 Lab · Khamzin Daniyal</p>
+  </footer>
+</body>
+</html>
