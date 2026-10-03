@@ -1,0 +1,252 @@
+/* SIS-1 CSS Custom Properties derived from Seed Formula */
+:root {
+  --seed-hue: 43;
+  --seed-accent: 94;
+  --primary: hsl(var(--seed-hue), 65%, 40%);
+  --primary-light: hsl(var(--seed-hue), 65%, 92%);
+  --primary-dark: hsl(var(--seed-hue), 65%, 25%);
+  --accent: hsl(var(--seed-accent), 70%, 45%);
+  --accent-light: hsl(var(--seed-accent), 70%, 94%);
+  --bg-gradient-start: #f8fafc;
+  --bg-gradient-end: #edf2f7;
+  --text-main: #1a202c;
+  --text-muted: #4a5568;
+  --card-bg: #ffffff;
+  --border-subtle: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 10% 20%, var(--primary-light), var(--bg-gradient-end));
+  color: var(--text-main);
+  padding: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Main Container */
+.card-container {
+  width: 100%;
+  max-width: 520px;
+}
+
+/* Digital Business Card */
+.business-card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: 0 16px 36px -8px rgba(40, 30, 10, 0.14),
+              0 0 0 1px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  border-top: 6px solid var(--primary);
+  border-bottom: 4px solid var(--accent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.business-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 42px -10px rgba(40, 30, 10, 0.2);
+}
+
+/* Card Header */
+.card-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #ffffff;
+  padding: 2rem 1.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.logo-wrapper {
+  flex-shrink: 0;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.club-logo {
+  width: 100%;
+  height: 100%;
+}
+
+.brand-text .brand-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.brand-text .brand-tagline {
+  font-size: 0.82rem;
+  color: var(--accent-light);
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+/* Card Body */
+.card-body {
+  padding: 1.75rem;
+}
+
+.lead-role {
+  margin-bottom: 1.25rem;
+}
+
+.role-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--primary-dark);
+  background: var(--primary-light);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.person-name {
+  font-size: 1.5rem;
+  color: var(--text-main);
+  margin-top: 0.35rem;
+  font-weight: 800;
+}
+
+/* Quick Facts / Stats */
+.stats-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  list-style: none;
+  margin: 1.25rem 0;
+  padding: 0.75rem;
+  background: var(--accent-light);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-top: 0.15rem;
+}
+
+.bio-snippet p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Contact Block */
+.contact-block {
+  border-top: 1px dashed var(--border-subtle);
+  padding-top: 1.25rem;
+}
+
+.contact-title {
+  font-size: 1rem;
+  color: var(--primary);
+  margin-bottom: 0.65rem;
+  font-weight: 700;
+}
+
+.contact-entry {
+  font-size: 0.88rem;
+  color: var(--text-main);
+  margin-bottom: 0.45rem;
+}
+
+.contact-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+  color: var(--primary-dark);
+}
+
+/* Call to Action Button */
+.action-wrap {
+  margin-top: 1.25rem;
+}
+
+.btn-action {
+  display: block;
+  text-align: center;
+  background: var(--accent);
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: filter 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.btn-action:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.btn-action:active {
+  transform: translateY(0);
+}
+
+/* Footer & Mandatory Watermark */
+.card-footer {
+  background: #f8fafc;
+  padding: 1.15rem 1.75rem;
+  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+}
+
+.footer-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.watermark {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  background: var(--primary-light);
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-subtle);
+  letter-spacing: 0.02em;
+}
