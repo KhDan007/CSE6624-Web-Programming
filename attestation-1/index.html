@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Satbayev Chess Ladder — Collegiate League & Arena</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Semantic Header with Flex Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="brand">
+        <svg class="brand-icon" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" fill="var(--primary)" stroke="var(--accent)" stroke-width="2" />
+          <path d="M14 28 L26 28 C26 28 25 24 23 22 C21 20 23 17 23 14 C23 11 19 9 17 11 C15 12 15 15 13 17 C15 18 15 20 15 22 C15 24 13 26 14 28 Z" fill="#ffffff" />
+        </svg>
+        <span class="brand-title">Satbayev Chess Ladder</span>
+      </div>
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link">Home</a></li>
+          <li><a href="#cards" class="nav-link">Ladder Formats</a></li>
+          <li><a href="#about" class="nav-link">Club Rules</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-content">
+        <span class="hero-badge">Collegiate Arena · Season 2026–2027</span>
+        <h1 class="hero-headline">Climb the Satbayev Online Chess Ladder</h1>
+        <p class="hero-subtext">
+          Join Almaty's premier student chess network. Play rated blitz games, earn verifiable Elo points, and defend your board rank in weekly collegiate ladder challenges.
+        </p>
+        <div class="hero-actions">
+          <a href="#cards" class="btn btn-primary">Explore Brackets</a>
+          <a href="#about" class="btn btn-secondary">Arbiter Guidelines</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 Cards Layout (Flexbox / Grid) -->
+    <section class="cards-section" id="cards">
+      <div class="section-heading">
+        <h2>Competitive Tiers & Weekly Brackets</h2>
+        <p>Choose your rated division and compete against peer grandmasters and rising university tacticians.</p>
+      </div>
+
+      <div class="cards-grid">
+        <!-- Card 1 -->
+        <article class="tier-card">
+          <div class="card-icon-tag">Blitz Tier</div>
+          <h3 class="card-title">3+2 Rapid Ladder</h3>
+          <p class="card-desc">Fast-paced blitz arena testing instinct and opening precision. Match results immediately update your live Elo rating on the club portal.</p>
+          <ul class="card-specs">
+            <li><strong>Time Control:</strong> 3 min + 2 sec increment</li>
+            <li><strong>Rounds:</strong> Continuous open queue</li>
+            <li><strong>Target Elo:</strong> 1500–2200</li>
+          </ul>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="tier-card featured-card">
+          <div class="card-icon-tag accent-tag">Premier League</div>
+          <h3 class="card-title">10+0 Classical Arena</h3>
+          <p class="card-desc">The flagship university tournament format. Deep positional maneuvering analyzed by campus arbiters with post-match game reviews.</p>
+          <ul class="card-specs">
+            <li><strong>Time Control:</strong> 10 min sudden death</li>
+            <li><strong>Rounds:</strong> Scheduled Saturday derbies</li>
+            <li><strong>Target Elo:</strong> 1700+ Varsity Selection</li>
+          </ul>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="tier-card">
+          <div class="card-icon-tag">Training Tier</div>
+          <h3 class="card-title">Tactical Endgame Lab</h3>
+          <p class="card-desc">Weekly masterclasses breaking down grandmaster pawn endgames, rook activity, and dynamic bishop sacrifices for tournament preparation.</p>
+          <ul class="card-specs">
+            <li><strong>Format:</strong> Analysis + Challenge sparring</li>
+            <li><strong>Schedule:</strong> Wednesdays 17:00 at GUK</li>
+            <li><strong>Target Elo:</strong> All student levels welcome</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Additional Context Section for Landmarks -->
+    <section class="about-section" id="about">
+      <h2>Ladder Challenge Protocol</h2>
+      <p>
+        Any active player may issue a challenge to anyone up to 3 rungs above them on the ladder. Uncontested challenges within 48 hours award forfeit points per official club bylaws.
+      </p>
+    </section>
+  </main>
+
+  <!-- Semantic Footer with Mandatory Watermark -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-meta">Satbayev University · Institute of Automation and Information Technologies</p>
+      <p class="footer-lead">Coordinator: Khamzin Daniyal · Lead Arbiter</p>
+      <!-- Anti-copy Watermark per Section 4 -->
+      <div class="watermark-wrapper">
+        <span class="watermark-label">Student Verification Watermark:</span>
+        <code class="watermark">CSE6624 | Khamzin Daniyal | 070301552252 | niche-23</code>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

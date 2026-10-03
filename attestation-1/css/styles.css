@@ -1,0 +1,388 @@
+/* ==========================================================================
+   TSIS-2 CSS: Theme, Seed Color Variables, Box Model & Responsive Layout
+   Niche: 23 (Chess club with online ladder)
+   Hue: 43 | Accent: 94
+   ========================================================================== */
+
+:root {
+  --seed-hue: 43;
+  --seed-accent: 94;
+
+  /* HSL seed colors according to booklet formula */
+  --primary: hsl(var(--seed-hue), 65%, 40%);
+  --primary-hover: hsl(var(--seed-hue), 65%, 32%);
+  --primary-light: hsl(var(--seed-hue), 65%, 94%);
+  --primary-surface: hsl(var(--seed-hue), 40%, 97%);
+
+  --accent: hsl(var(--seed-accent), 70%, 45%);
+  --accent-hover: hsl(var(--seed-accent), 70%, 36%);
+  --accent-light: hsl(var(--seed-accent), 70%, 92%);
+
+  --text-dark: #1a202c;
+  --text-muted: #4a5568;
+  --bg-page: #f7fafc;
+  --card-bg: #ffffff;
+  --border-light: #e2e8f0;
+}
+
+/* Universal Box Sizing (Strict Box Model) */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Header & Flexbox Navigation
+   ========================================================================== */
+.site-header {
+  background: #ffffff;
+  border-bottom: 2px solid var(--border-light);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-icon {
+  width: 34px;
+  height: 34px;
+}
+
+.brand-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+}
+
+.main-nav .nav-list {
+  display: flex;
+  list-style: none;
+  gap: 1.25rem;
+}
+
+.nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 4px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+  background-color: var(--primary-light);
+}
+
+/* ==========================================================================
+   Hero Section (Flexbox Alignment & Seed Theming)
+   ========================================================================== */
+.hero-section {
+  background: linear-gradient(135deg, var(--primary) 0%, hsl(var(--seed-hue), 65%, 28%) 100%);
+  color: #ffffff;
+  padding: 4.5rem 1.5rem;
+  text-align: center;
+  border-bottom: 4px solid var(--accent);
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: var(--accent-light);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 1.25rem;
+}
+
+.hero-headline {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero-subtext {
+  font-size: 1.15rem;
+  color: #f1f5f9;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: transform 0.15s ease, filter 0.15s ease, background 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Cards Section (CSS Grid Layout - 3 Columns)
+   ========================================================================== */
+.cards-section {
+  max-width: 1100px;
+  margin: 3.5rem auto;
+  padding: 0 1.25rem;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.section-heading h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.section-heading p {
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+  font-size: 1.05rem;
+}
+
+/* 3-Column Grid for Desktop */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.tier-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.tier-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary);
+}
+
+.featured-card {
+  border-top: 4px solid var(--accent);
+  background: var(--primary-surface);
+}
+
+.card-icon-tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.6rem;
+  background: var(--primary-light);
+  color: var(--primary);
+  border-radius: 4px;
+  margin-bottom: 0.85rem;
+}
+
+.card-icon-tag.accent-tag {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.card-title {
+  font-size: 1.35rem;
+  color: var(--text-dark);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.card-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.card-specs {
+  list-style: none;
+  border-top: 1px dashed var(--border-light);
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+}
+
+.card-specs li {
+  margin-bottom: 0.4rem;
+}
+
+/* About / Rules Section */
+.about-section {
+  max-width: 1100px;
+  margin: 0 auto 3.5rem;
+  padding: 1.75rem;
+  background: #ffffff;
+  border-radius: 12px;
+  border-left: 5px solid var(--primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.about-section h2 {
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.about-section p {
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Footer & Mandatory Watermark
+   ========================================================================== */
+.site-footer {
+  background: #1a202c;
+  color: #cbd5e0;
+  padding: 2.5rem 1.25rem;
+  border-top: 4px solid var(--primary);
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-meta {
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+.footer-lead {
+  font-size: 0.85rem;
+  color: #a0aec0;
+  margin-bottom: 1.25rem;
+}
+
+.watermark-wrapper {
+  margin-top: 0.5rem;
+}
+
+.watermark-label {
+  display: block;
+  font-size: 0.72rem;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.watermark {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--primary);
+  padding: 0.35rem 0.85rem;
+  border-radius: 4px;
+  border: 1px solid var(--accent);
+  display: inline-block;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints (Reflow for tablet & mobile)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-headline {
+    font-size: 2.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-section {
+    padding: 3rem 1rem;
+  }
+
+  .hero-headline {
+    font-size: 1.75rem;
+  }
+}
