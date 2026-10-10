@@ -1,91 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Khamzin Daniyal · 070301552252 — SIS-2 Pure CSS Art</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khamzin Daniyal 070301552252 - SIS 2 CSS Art</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header Landmark -->
-  <header class="art-header">
-    <div class="header-inner">
-      <span class="badge">SIS-2 · Week 6 · Pure CSS Art</span>
-      <h1>Satbayev Chess Ladder: The Tactical Knight</h1>
-      <p class="subtitle">Geometric Pure CSS Figure Created Exclusively with Seed Palette (Hue 43 / Accent 94)</p>
-    </div>
+  <header>
+    <h1>SIS 2: Chess Rook (CSS Art)</h1>
+    <p>Satbayev Chess Club Online Ladder · Niche 23</p>
   </header>
 
-  <!-- Main Landmark with Flexbox/Grid Layout Surrounding the Art -->
-  <main class="main-layout">
-    <section class="art-stage-container">
-      <!-- CSS Art Canvas (No external images used) -->
-      <div class="chess-canvas" role="img" aria-label="Pure CSS Art depicting a chess knight on a dual-tone board pedestal">
-        <div class="board-tile-left"></div>
-        <div class="board-tile-right"></div>
-        
-        <!-- Knight CSS Art Figure (Composed of 8 positioned/shaped pure CSS elements) -->
-        <div class="knight-figure">
-          <!-- 1. Pedestal Bottom Base -->
-          <div class="knight-part piece-base-bottom"></div>
-          <!-- 2. Pedestal Collar Tier -->
-          <div class="knight-part piece-base-tier"></div>
-          <!-- 3. Arching Chest & Neck Base -->
-          <div class="knight-part piece-chest"></div>
-          <!-- 4. Curving Back & Stepped Mane -->
-          <div class="knight-part piece-mane"></div>
-          <!-- 5. Knight Head & Crown -->
-          <div class="knight-part piece-head"></div>
-          <!-- 6. Pointed Ear -->
-          <div class="knight-part piece-ear"></div>
-          <!-- 7. Forward Angular Muzzle & Snout -->
-          <div class="knight-part piece-snout"></div>
-          <!-- 8. Tactile Eye Aperture -->
-          <div class="knight-part piece-eye"></div>
+  <main>
+    <section class="art-area">
+      <!-- CSS art container: chess rook piece -->
+      <div class="art-frame">
+        <div class="rook">
+          <!-- 1. Battlements (crenels) -->
+          <div class="crenels">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <!-- 2. Tower roof / head -->
+          <div class="tower-top"></div>
+          <!-- 3. Upper ring / neck -->
+          <div class="neck"></div>
+          <!-- 4. Main tower body -->
+          <div class="tower-body"></div>
+          <!-- 5. Base ring -->
+          <div class="base-ring"></div>
+          <!-- 6. Bottom pedestal -->
+          <div class="base-bottom"></div>
         </div>
       </div>
 
-      <!-- Caption explaining what the art represents for the niche -->
-      <figcaption class="art-caption">
-        <strong>Figure Explanation:</strong> This pure CSS art piece depicts the tactical <em>Chess Knight</em>, the emblem of the Satbayev Chess Club's online ladder. The knight embodies agility, unorthodox maneuvers over obstacle pieces, and sudden tactical forks—mirroring how club members climb past opponents on the collegiate ladder rankings.
-      </figcaption>
+      <p class="caption">
+        <strong>Figure:</strong> A chess rook (castle) made using 6 HTML elements and CSS shapes. The rook represents the endgame ladder system in our club, where players build up solid rating points and defend their rank against challengers.
+      </p>
     </section>
 
-    <!-- Side Panel via Grid/Flexbox Layout -->
-    <aside class="palette-spec">
-      <h2>Seed Palette Breakdown</h2>
-      <p class="palette-desc">Strictly constructed using student seed HSL angles and their calculated tonal steps (no arbitrary colors):</p>
-      <div class="swatches-grid">
-        <div class="swatch-item">
-          <div class="swatch-box swatch-primary"></div>
-          <span>Primary: <code>hsl(43, 65%, 40%)</code></span>
-        </div>
-        <div class="swatch-item">
-          <div class="swatch-box swatch-accent"></div>
-          <span>Accent: <code>hsl(94, 70%, 45%)</code></span>
-        </div>
-        <div class="swatch-item">
-          <div class="swatch-box swatch-primary-dark"></div>
-          <span>Primary Shade: <code>hsl(43, 65%, 22%)</code></span>
-        </div>
-        <div class="swatch-item">
-          <div class="swatch-box swatch-accent-light"></div>
-          <span>Accent Tint: <code>hsl(94, 70%, 88%)</code></span>
-        </div>
-      </div>
-      <div class="card-hint">
-        💡 <strong>Interactive Effect:</strong> Hover over the chess canvas to observe a smooth soft elevation and elevation shadow transition.
-      </div>
+    <aside class="palette-info">
+      <h2>My Seed Palette</h2>
+      <p>Hue: 43 | Accent: 94</p>
+      <ul>
+        <li><span class="color-dot dot-primary"></span> Primary color: hsl(43, 65%, 40%)</li>
+        <li><span class="color-dot dot-accent"></span> Accent color: hsl(94, 70%, 45%)</li>
+        <li><span class="color-dot dot-dark"></span> Dark shade: hsl(43, 65%, 25%)</li>
+        <li><span class="color-dot dot-light"></span> Light tint: hsl(43, 65%, 85%)</li>
+      </ul>
+      <p class="note">Hovering over the box lifts the piece up slightly.</p>
     </aside>
   </main>
 
-  <!-- Semantic Footer with Mandatory Watermark -->
-  <footer class="art-footer">
-    <p class="footer-credit">Satbayev University · CSE6624 Web Programming · Student Independent Study 2</p>
-    <!-- Watermark string with exact format from Section 4 -->
-    <div class="watermark-box">
-      <code class="watermark">CSE6624 | Khamzin Daniyal | 070301552252 | niche-23</code>
-    </div>
+  <footer>
+    <p>Satbayev University · CSE6624 Web Programming</p>
+    <!-- Watermark requirement -->
+    <p class="watermark">CSE6624 | Khamzin Daniyal | 070301552252 | niche-23</p>
   </footer>
 </body>
 </html>
