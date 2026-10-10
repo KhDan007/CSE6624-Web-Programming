@@ -1,0 +1,68 @@
+/* styles.css for Week 06 Practice */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f7fafc;
+  color: #1a202c;
+}
+
+/* Flexbox Header with Space-Between */
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  background: #1a365d;
+  color: #ffffff;
+}
+
+.top h1 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+/* Flexbox Nav */
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  color: #bee3f8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: #ffffff;
+}
+
+/* Flexbox Wrapping Cards Row */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+/* Card with Flex Basis and Growth */
+.card {
+  flex: 1 1 200px;
+  border: 1px solid #a0aec0;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: #2b6cb0;
+}
+
+.card p {
+  margin-bottom: 0;
+  color: #4a5568;
+}
