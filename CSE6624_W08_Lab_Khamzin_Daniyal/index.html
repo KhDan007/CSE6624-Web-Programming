@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Satbayev Varsity Volleyball — Performance Hub</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>Satbayev Varsity Volleyball</h1>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="tips.html">Tactics & Schedule</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Collegiate Middle Blocker Program</h2>
+      <p>Satbayev University's varsity volleyball team competes in the National Student League. As middle blockers, we dominate the net through disciplined swing-block seals and high-velocity quick attacks that freeze opponent defenses.</p>
+    </section>
+
+    <!-- Content Grid with Cards -->
+    <section class="content-grid">
+      <article class="card">
+        <h3>Training Arena & Facility</h3>
+        <p><img src="images/drill.jpg" alt="Satbayev volleyball athletes in defensive ready position on court" /></p>
+        <p>Practices occur at Sports Complex Court A. State-of-the-art taraflex surfaces, regulation nets, and plyometric equipment support our high-impact training cycles.</p>
+      </article>
+
+      <article class="card">
+        <h3>Join the Varsity Squad</h3>
+        <!-- Working Contact Form (Week 04 skills) -->
+        <form class="contact-form" method="get" action="#">
+          <p>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Daniyal Khamzin" required />
+          </p>
+          <p>
+            <label for="email">Student Email</label>
+            <input type="email" id="email" name="email" placeholder="student@satbayev.university" required />
+          </p>
+          <p>
+            <label for="position">Playing Position</label>
+            <select id="position" name="position">
+              <option value="middle" selected>Middle Blocker</option>
+              <option value="outside">Outside Hitter</option>
+              <option value="setter">Setter</option>
+              <option value="libero">Libero</option>
+            </select>
+          </p>
+          <p>
+            <label for="notes">Inquiry / Athletic Background</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Share your experience, height, or spike touch..."></textarea>
+          </p>
+          <button type="submit" class="btn">Send Tryout Request</button>
+        </form>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>CSE6624 Week 08 Lab · Khamzin Daniyal · Satbayev University</p>
+  </footer>
+</body>
+</html>
