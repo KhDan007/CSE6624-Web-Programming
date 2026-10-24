@@ -1,0 +1,192 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f7fafc;
+  color: #1a202c;
+  line-height: 1.6;
+}
+
+/* Fluid responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header */
+.header {
+  background-color: #1a365d;
+  color: #ffffff;
+  border-bottom: 3px solid #2b6cb0;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+nav a {
+  color: #bee3f8;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 1.25rem;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+  color: #ffffff;
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.25rem;
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #e2e8f0;
+}
+
+/* Features Section with Responsive CSS Grid */
+.features-section {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 1.25rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-title h2 {
+  font-size: 1.85rem;
+  color: #1a365d;
+  font-weight: 800;
+}
+
+.section-title p {
+  color: #718096;
+  margin-top: 0.35rem;
+}
+
+/* Desktop: 3-column features grid */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-content h3 {
+  font-size: 1.2rem;
+  color: #2b6cb0;
+  margin-bottom: 0.5rem;
+}
+
+.card-content p {
+  font-size: 0.92rem;
+  color: #4a5568;
+}
+
+/* Footer */
+.footer {
+  background: #1a202c;
+  color: #cbd5e0;
+  padding: 2rem 1.25rem;
+  text-align: center;
+  margin-top: 3.5rem;
+  border-top: 1px solid #2d3748;
+}
+
+.footer p {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Breakpoints (as required: ~900px tablet, ~600px mobile)
+   ========================================================================== */
+
+/* Breakpoint 1: Tablet (~900px) -> 2 columns */
+@media (max-width: 900px) {
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Breakpoint 2: Mobile (~600px) -> 1 column & adjusted padding */
+@media (max-width: 600px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+
+  nav a {
+    margin: 0 0.5rem;
+  }
+}
