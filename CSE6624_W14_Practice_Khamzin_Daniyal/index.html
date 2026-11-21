@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 14 Practice — Accessibility Quick Wins</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header Landmark with single H1 -->
+  <header>
+    <h1>Satbayev Athletics — Accessible Tryout Portal</h1>
+    <p>Accessibility audit demonstration: labels, alt text, focus visibility, contrast, and clean heading hierarchy.</p>
+  </header>
+
+  <main>
+    <!-- Section 1: Intro Article with image having meaningful alt -->
+    <section class="card">
+      <h2>Varsity Training Overview</h2>
+      <p>
+        <img src="images/volleyball.jpg" alt="Satbayev varsity volleyball players in defensive stance ready for live serve receive" width="480" />
+      </p>
+      <p>
+        The varsity program requires athletes to register their medical and academic credentials prior to participating in full-contact court sessions.
+      </p>
+    </section>
+
+    <!-- Section 2: Form where every input has a matching label -->
+    <section class="card">
+      <h2>Candidate Registration Form</h2>
+      <form method="get" action="#">
+        <div class="form-group">
+          <label for="athlete-name">Full Athlete Name (Required)</label>
+          <input id="athlete-name" name="athlete_name" type="text" placeholder="e.g. Daniyal Khamzin" required />
+        </div>
+
+        <div class="form-group">
+          <label for="athlete-email">University Email (Required)</label>
+          <input id="athlete-email" name="athlete_email" type="email" placeholder="student@satbayev.university" required />
+        </div>
+
+        <div class="form-group">
+          <label for="athlete-position">Court Specialization</label>
+          <select id="athlete-position" name="athlete_position">
+            <option value="middle">Middle Blocker</option>
+            <option value="outside">Outside Hitter</option>
+            <option value="setter">Setter</option>
+            <option value="libero">Libero</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="athlete-notes">Playing Background / Height / Reach</label>
+          <textarea id="athlete-notes" name="athlete_notes" rows="3" placeholder="Include your standing reach and jump touch..."></textarea>
+        </div>
+
+        <button type="submit">Submit Registration</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>CSE6624 Week 14 Practice · Khamzin Daniyal · Satbayev University</p>
+  </footer>
+</body>
+</html>

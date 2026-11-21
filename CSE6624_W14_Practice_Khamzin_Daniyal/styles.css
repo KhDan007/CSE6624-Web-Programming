@@ -1,0 +1,124 @@
+/* styles.css for Week 14 Practice */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f7fafc;
+  /* High contrast dark text on light background */
+  color: #1a202c;
+  line-height: 1.6;
+  padding-bottom: 3rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+header {
+  background-color: #1a365d;
+  color: #ffffff;
+  padding: 2rem 1.25rem;
+  text-align: center;
+  border-bottom: 4px solid #2b6cb0;
+}
+
+header h1 {
+  font-size: 1.65rem;
+  margin-bottom: 0.35rem;
+}
+
+header p {
+  color: #bee3f8;
+  font-size: 0.95rem;
+}
+
+main {
+  max-width: 650px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  padding: 1.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  color: #1a365d;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #2d3748;
+  margin-bottom: 0.35rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  font-size: 1rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  color: #1a202c;
+  background-color: #ffffff;
+  font-family: inherit;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: #2b6cb0;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #1a365d;
+}
+
+/* ==========================================================================
+   Accessible :focus-visible Outline Styles (Rubric Requirement)
+   ========================================================================== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #dd6b20;
+  outline-offset: 2px;
+}
+
+footer {
+  text-align: center;
+  color: #718096;
+  font-size: 0.85rem;
+  margin-top: 2rem;
+}
