@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 10 Practice — Tip Calculator & JS Basics</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Satbayev Athletics Cafe — Tip Calculator</h1>
+    <p>JavaScript basics demo: variables, numbers, strings, and console diagnostics.</p>
+  </header>
+
+  <main>
+    <div class="calculator-card">
+      <h2>Post-Game Meal Bill</h2>
+      
+      <div class="input-group">
+        <label for="bill">Bill Amount (KZT)</label>
+        <input id="bill" type="number" min="0" step="0.01" value="1000" />
+      </div>
+
+      <div class="input-group">
+        <label for="tip">Tip Percentage (%)</label>
+        <input id="tip" type="number" min="0" value="10" />
+      </div>
+
+      <button id="btn" type="button">Calculate Tip</button>
+
+      <h3>Result Summary</h3>
+      <pre id="out">Press "Calculate Tip" to see breakdown.</pre>
+    </div>
+  </main>
+
+  <footer>
+    <p>CSE6624 Week 10 Practice · Khamzin Daniyal · Satbayev University</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
