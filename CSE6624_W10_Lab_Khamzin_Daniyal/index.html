@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 10 Lab — Tip Calculator & Grade Average Tool</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Satbayev Student Toolkit</h1>
+    <p>Two essential utilities for student-athletes: team meal tip calculator and semester grade average calculator.</p>
+  </header>
+
+  <main>
+    <!-- Tool 1: Polished Tip Calculator -->
+    <section class="tool-card" id="tip-tool">
+      <h2>Tool 1: Post-Match Meal Tip Calculator</h2>
+      <p class="tool-desc">Quickly calculate gratuity and split amounts for team canteen dinners.</p>
+      
+      <div class="form-row">
+        <label for="bill">Meal Bill (KZT)</label>
+        <input id="bill" type="number" min="0" step="0.01" placeholder="e.g. 5000" />
+      </div>
+
+      <div class="form-row">
+        <label for="tip">Tip Percentage (%)</label>
+        <input id="tip" type="number" min="0" placeholder="e.g. 10" value="10" />
+      </div>
+
+      <button id="tip-btn" type="button">Calculate Tip & Total</button>
+
+      <div class="result-box" id="tip-result">Results will appear here.</div>
+    </section>
+
+    <!-- Tool 2: Grade Average Tool -->
+    <section class="tool-card" id="grade-tool">
+      <h2>Tool 2: Academic Grade Average Calculator</h2>
+      <p class="tool-desc">Compute the 3-assignment average to verify academic varsity eligibility.</p>
+      
+      <div class="form-row-triplet">
+        <div>
+          <label for="g1">Grade 1</label>
+          <input id="g1" type="number" min="0" max="100" placeholder="0-100" />
+        </div>
+        <div>
+          <label for="g2">Grade 2</label>
+          <input id="g2" type="number" min="0" max="100" placeholder="0-100" />
+        </div>
+        <div>
+          <label for="g3">Grade 3</label>
+          <input id="g3" type="number" min="0" max="100" placeholder="0-100" />
+        </div>
+      </div>
+
+      <button id="grade-btn" type="button">Calculate Average</button>
+
+      <div class="result-box" id="grade-result">Results will appear here.</div>
+    </section>
+  </main>
+
+  <footer>
+    <p>CSE6624 Week 10 Lab · Khamzin Daniyal · Satbayev University</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
