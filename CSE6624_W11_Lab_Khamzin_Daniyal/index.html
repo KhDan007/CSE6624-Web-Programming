@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 11 Lab — Filterable Campus Directory</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Satbayev University Student Organizations</h1>
+    <p>Live search filterable directory powered by JavaScript array filtering and DOM manipulation.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="search-bar">
+        <label for="q" class="search-label">Search Directory:</label>
+        <input id="q" type="text" placeholder="Filter by organization name (e.g. volleyball, chess, robotics)..." autofocus />
+      </div>
+
+      <div class="results-meta">
+        <span id="count">Showing all organizations</span>
+      </div>
+
+      <!-- Live filterable list -->
+      <ul id="list" class="clubs-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>CSE6624 Week 11 Lab · Khamzin Daniyal · Satbayev University</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
