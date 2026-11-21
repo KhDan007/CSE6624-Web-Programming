@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 12 Practice — DOM and Events</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Satbayev Athletics — Court Bench Tracker</h1>
+    <p>Practice with DOM manipulation: createElement, appendChild, and event handling.</p>
+  </header>
+
+  <main>
+    <!-- Section 1: Counter -->
+    <section class="card">
+      <h2>Active Set Point Counter</h2>
+      <p class="counter-display">Points: <span id="count">0</span></p>
+      <button id="inc" type="button">+1 Point</button>
+    </section>
+
+    <!-- Section 2: Note Adder -->
+    <section class="card">
+      <h2>Tactical Bench Notes</h2>
+      <form id="form">
+        <label for="item">Add Observation / Rotation Note</label>
+        <div class="input-row">
+          <input id="item" type="text" placeholder="e.g. Block opponent middle on slide..." autocomplete="off" />
+          <button type="submit">Add Note</button>
+        </div>
+      </form>
+
+      <div class="list-controls">
+        <h3>Session Notes</h3>
+        <button id="clear-all" type="button" class="btn-clear">Clear All</button>
+      </div>
+      <ul id="list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>CSE6624 Week 12 Practice · Khamzin Daniyal · Satbayev University</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
