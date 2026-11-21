@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Satbayev Varsity Volleyball — Performance Portal</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Header with Accessible Nav -->
+  <header>
+    <div class="header-inner">
+      <span class="logo">Satbayev Volleyball</span>
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="tactics.html">Tactics & Schedule</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Varsity Middle Blocker Performance Hub</h1>
+      <p>Collegiate front-row net dominance, 3-step swing blocking, and high-tempo transition offense for Satbayev University athletes.</p>
+    </section>
+
+    <!-- Grid Layout with Cards -->
+    <section class="content-grid">
+      <article class="card">
+        <h2>Training Facility & Court Arena</h2>
+        <img src="images/drill.jpg" alt="Satbayev volleyball athletes in defensive ready position on court" />
+        <p>Practices are held at Sports Complex Court A on certified collegiate taraflex flooring. Facilities include dynamic Vertec vertical reach measurement and plyometric training stations.</p>
+      </article>
+
+      <article class="card">
+        <h2>Candidate Tryout Registration</h2>
+        <form class="styled-form" method="get" action="#">
+          <div class="form-group">
+            <label for="name">Full Athlete Name (Required)</label>
+            <input type="text" id="name" name="name" placeholder="Daniyal Khamzin" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">University Email (Required)</label>
+            <input type="email" id="email" name="email" placeholder="student@satbayev.university" required />
+          </div>
+
+          <div class="form-group">
+            <label for="position">Playing Position</label>
+            <select id="position" name="position">
+              <option value="middle" selected>Middle Blocker</option>
+              <option value="outside">Outside Hitter</option>
+              <option value="setter">Setter</option>
+              <option value="libero">Libero</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Athletic Background & Standing Reach</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Provide height, spike reach, or previous club team experience..."></textarea>
+          </div>
+
+          <button type="submit" class="btn">Submit Tryout Application</button>
+        </form>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>CSE6624 Week 14 Lab · Khamzin Daniyal · Satbayev University</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
