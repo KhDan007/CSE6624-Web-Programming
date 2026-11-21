@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 12 Lab — Todo-Lite with DOM Only</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Satbayev Varsity Volleyball — Task Checklist</h1>
+    <p>A pure vanilla DOM task manager: add, toggle complete (strikethrough), and delete with stopPropagation.</p>
+  </header>
+
+  <main>
+    <div class="todo-app">
+      <!-- Add via Form -->
+      <form id="todo-form">
+        <label for="todo-input">New Training Action / Drill Task</label>
+        <div class="input-group">
+          <input id="todo-input" type="text" placeholder="e.g. 50 lateral slide reps at net..." autocomplete="off" />
+          <button type="submit" id="add-btn">Add Task</button>
+        </div>
+      </form>
+
+      <!-- Task List Container -->
+      <div class="list-section">
+        <h2>Drill Action Items</h2>
+        <p class="hint">Click an item to toggle completion status. Click the red button to delete.</p>
+        
+        <ul id="todo-list"></ul>
+        
+        <!-- Empty state message -->
+        <p id="empty-state" class="empty-state">No tasks remaining. All training items complete!</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>CSE6624 Week 12 Lab · Khamzin Daniyal · Satbayev University</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
