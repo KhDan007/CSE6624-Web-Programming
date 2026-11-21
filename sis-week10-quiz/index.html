@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khamzin Daniyal 070301552252 — SIS 3 Chess Quiz</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Satbayev Chess Club: Ladder Rules & Tactics Quiz</h1>
+    <p>Niche 23 · Test your knowledge of collegiate chess rules, Elo ratings, and tactical endgames.</p>
+  </header>
+
+  <main>
+    <div class="quiz-card">
+      <!-- Progress Bar & Score Display -->
+      <div class="quiz-meta">
+        <span id="question-tracker">Question 1 of 5</span>
+        <span id="score-tracker">Score: 0 / 5</span>
+      </div>
+
+      <!-- Question Container (Updated via DOM) -->
+      <div id="quiz-body">
+        <h2 id="question-text">Loading question...</h2>
+        <div id="options-container" class="options-group"></div>
+      </div>
+
+      <!-- Outcome / Results Screen (Hidden initially) -->
+      <div id="results-screen" class="results-screen" style="display: none;">
+        <h2>Quiz Completed!</h2>
+        <p id="final-score-text">You scored 0 out of 5.</p>
+        <p id="feedback-text" class="feedback-msg"></p>
+        <button id="reset-btn" type="button" class="btn">Play Again</button>
+      </div>
+
+      <!-- Action Button -->
+      <div class="quiz-footer">
+        <button id="next-btn" type="button" class="btn" style="display: none;">Next Question</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Satbayev University · CSE6624 Web Programming · Student Independent Study 3</p>
+    <!-- Watermark string with exact format from Section 4 -->
+    <p class="watermark">CSE6624 | Khamzin Daniyal | 070301552252 | niche-23</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
