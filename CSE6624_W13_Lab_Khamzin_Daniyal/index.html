@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 13 Lab — Fetch Local JSON and Render Cards</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Satbayev Athletics — Campus Facilities Hub</h1>
+    <p>Asynchronous data loading using fetch() with localStorage persistence.</p>
+  </header>
+
+  <main>
+    <section class="card-wrapper">
+      <div class="section-top">
+        <h2>Athletic Locations & Training Facilities</h2>
+        <span id="fav-status" class="fav-badge">No favorite saved yet</span>
+      </div>
+
+      <!-- Render container for fetched cards -->
+      <ul id="list" class="facility-grid">
+        <li class="loading-state">Loading facilities data from data.json...</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>CSE6624 Week 13 Lab · Khamzin Daniyal · Satbayev University</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

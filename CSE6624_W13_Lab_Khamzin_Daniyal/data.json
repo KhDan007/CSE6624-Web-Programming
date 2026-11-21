@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Sports Complex Court A",
+    "blurb": "Primary taraflex arena for Satbayev varsity volleyball home matches and tactical drills."
+  },
+  {
+    "id": 2,
+    "title": "Varsity Strength Gym",
+    "blurb": "Equipped with trap-bars and plyometric boxes for middle blocker vertical jump training."
+  },
+  {
+    "id": 3,
+    "title": "Tactics & Film Room GUK714",
+    "blurb": "CSE6624 classroom and video review room for studying opponent setter rotation tendencies."
+  },
+  {
+    "id": 4,
+    "title": "Campus Canteen",
+    "blurb": "Post-match refueling hub with team meal specials after Saturday morning scrimmages."
+  }
+]
