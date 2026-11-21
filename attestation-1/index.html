@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Satbayev Chess Ladder — Collegiate League & Arena</title>
+  <title>Satbayev Chess Ladder — Collegiate League & Online Arena</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <!-- Semantic Header with Flex Navigation -->
+  <!-- Header with Mobile Nav Toggle -->
   <header class="site-header">
     <div class="nav-container">
       <div class="brand">
@@ -17,18 +17,26 @@
         </svg>
         <span class="brand-title">Satbayev Chess Ladder</span>
       </div>
-      <nav class="main-nav" aria-label="Primary Navigation">
+
+      <!-- Mobile Nav Toggle Button (TSIS-4 / Attestation 1 JS interaction) -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Primary Navigation">
         <ul class="nav-list">
           <li><a href="#hero" class="nav-link">Home</a></li>
           <li><a href="#cards" class="nav-link">Ladder Formats</a></li>
           <li><a href="#about" class="nav-link">Club Rules</a></li>
+          <li><a href="#gallery" class="nav-link">Club Media</a></li>
+          <li><a href="#challenge" class="nav-link">Challenge Form</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- Hero Section -->
+    <!-- Section 1: Hero Section -->
     <section class="hero-section" id="hero">
       <div class="hero-content">
         <span class="hero-badge">Collegiate Arena · Season 2026–2027</span>
@@ -37,13 +45,13 @@
           Join Almaty's premier student chess network. Play rated blitz games, earn verifiable Elo points, and defend your board rank in weekly collegiate ladder challenges.
         </p>
         <div class="hero-actions">
-          <a href="#cards" class="btn btn-primary">Explore Brackets</a>
-          <a href="#about" class="btn btn-secondary">Arbiter Guidelines</a>
+          <a href="#challenge" class="btn btn-primary">Issue Ladder Challenge</a>
+          <a href="#cards" class="btn btn-secondary">Explore Brackets</a>
         </div>
       </div>
     </section>
 
-    <!-- 3 Cards Layout (Flexbox / Grid) -->
+    <!-- Section 2: 3 Cards Grid -->
     <section class="cards-section" id="cards">
       <div class="section-heading">
         <h2>Competitive Tiers & Weekly Brackets</h2>
@@ -89,12 +97,77 @@
       </div>
     </section>
 
-    <!-- Additional Context Section for Landmarks -->
+    <!-- Section 3: About & Ladder Protocol -->
     <section class="about-section" id="about">
-      <h2>Ladder Challenge Protocol</h2>
+      <h2>Ladder Challenge Protocol & Arbiter Rules</h2>
       <p>
-        Any active player may issue a challenge to anyone up to 3 rungs above them on the ladder. Uncontested challenges within 48 hours award forfeit points per official club bylaws.
+        Any active player may issue an official ladder challenge to anyone ranked up to 3 rungs above them. Uncontested challenges within 48 hours award forfeit points per official club bylaws. All games are recorded and rated according to FIDE rapid calculation standards.
       </p>
+    </section>
+
+    <!-- Section 4: At least 3 Images with alt text -->
+    <section class="gallery-section" id="gallery">
+      <div class="section-heading">
+        <h2>Tournament Life & Campus Arena</h2>
+        <p>Glimpse our Saturday collegiate matches, masterclass seminars, and championship rounds.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-card">
+          <img src="images/board1.jpg" alt="Satbayev chess club members opening a blitz tournament game" />
+          <figcaption>Over-the-board blitz round at Satbayev GUK room 302.</figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="images/board2.jpg" alt="Collegiate chess player analyzing endgame pawn structure" />
+          <figcaption>Endgame laboratory analyzing master tactical variations.</figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="images/board3.jpg" alt="Arbiter and players reviewing electronic match score sheets" />
+          <figcaption>Arbiter review table recording weekly online ladder results.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Section 5: Working Contact / Challenge Form with Labels -->
+    <section class="form-section" id="challenge">
+      <div class="form-container">
+        <h2>Issue an Official Ladder Match Challenge</h2>
+        <p class="form-desc">Fill out your player details and choose your opponent rung to schedule an officially arbitrated ladder match.</p>
+
+        <form id="ladder-form" method="get" action="#">
+          <div class="form-row">
+            <label for="challenger-name">Challenger Full Name (Required)</label>
+            <input type="text" id="challenger-name" name="challenger_name" placeholder="e.g. Daniyal Khamzin" required />
+          </div>
+
+          <div class="form-row">
+            <label for="challenger-email">Student Email (Required)</label>
+            <input type="email" id="challenger-email" name="challenger_email" placeholder="student@satbayev.university" required />
+          </div>
+
+          <div class="form-row">
+            <label for="ladder-tier">Target Ladder Division</label>
+            <select id="ladder-tier" name="ladder_tier">
+              <option value="blitz">3+2 Rapid Ladder (Open Queue)</option>
+              <option value="classical" selected>10+0 Classical Arena (Premier League)</option>
+              <option value="endgame">Tactical Endgame Lab (Sparring)</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="current-elo">Your Current Rating / Elo Estimate</label>
+            <input type="number" id="current-elo" name="current_elo" min="800" max="2800" value="1500" />
+          </div>
+
+          <div class="form-row">
+            <label for="match-notes">Preferred Match Time & Notes</label>
+            <textarea id="match-notes" name="match_notes" rows="3" placeholder="Specify preferred Saturday match window or board number..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-submit">Submit Challenge Request</button>
+        </form>
+
+        <div id="form-feedback" class="form-feedback" style="display: none;"></div>
+      </div>
     </section>
   </main>
 
@@ -110,5 +183,7 @@
       </div>
     </div>
   </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
