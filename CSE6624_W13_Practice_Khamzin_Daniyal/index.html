@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 13 Practice — localStorage Basics</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Satbayev Athletics — Court Rotation Note</h1>
+    <p>Persistent storage demo using browser localStorage API.</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>Persistent Court Note</h2>
+      <label for="input">Enter game plan or rotation note:</label>
+      <input id="input" type="text" placeholder="e.g. Set 2: commit block on outside hitter..." />
+
+      <div class="btn-group">
+        <button id="save" type="button" class="btn-save">Save to localStorage</button>
+        <button id="clear" type="button" class="btn-clear">Clear Note</button>
+      </div>
+
+      <div class="output-section">
+        <h3>Stored Note Value</h3>
+        <p id="out">(empty)</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>CSE6624 Week 13 Practice · Khamzin Daniyal · Satbayev University</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
