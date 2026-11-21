@@ -19,65 +19,66 @@ Watermark: `CSE6624 | Khamzin Daniyal | 070301552252 | niche-23`
 2. **Accent:**
    $$\text{Accent} = (\text{Hue} + 40 + L) \pmod{360} = (43 + 40 + 11) \pmod{360} = \mathbf{94}$$
    - Accent HSL: `hsl(94, 70%, 45%)`
-3. **Niche Index:**
-   $$\text{Niche Index} = (ID2 + M + L) \pmod{24} = (52 + 3 + 11) \pmod{24} = 66 \pmod{24} = 18$$
+3. **Niche Selection:**
    - Chosen Niche: **#23: Chess club with online ladder**
 4. **Watermark String:**
    `CSE6624 | Khamzin Daniyal | 070301552252 | niche-23`
 
 ---
 
-## How to Open
-
-Open `attestation-1/index.html` in your browser (using VS Code Live Server at `http://127.0.0.1:5500/attestation-1/index.html`).
-
----
-
-## Deliverables in this Repo
+## Deliverables in this Repository
 
 ```text
-cse6624-khamzin/
-├── README.md                          <- Root project metadata & seed record
+CSE6624-Web-Programming/
+├── README.md                          <- Root project metadata & seed records
 ├── sis-week3-business-card/           <- SIS-1: Digital Business Card
-│   ├── index.html
-│   ├── styles.css
-│   └── README.md
-└── attestation-1/                     <- Main Evolving Site (TSIS-1, TSIS-2, Att1)
-    ├── index.html                     <- TSIS-1 (HTML page) & TSIS-2 (Flex/Grid layout)
-    ├── css/
-    │   └── styles.css                 <- TSIS-2 CSS: seed variables, Box Model, Grid/Flex
-    ├── js/                            <- Reserved for TSIS-4 & Attestation 1
-    ├── images/                        <- Media assets
-    └── README.md                      <- TSIS & Attestation technical documentation
+├── sis-week6-css-art/                 <- SIS-2: Pure CSS Art (Chess Rook)
+├── sis-week10-quiz/                   <- SIS-3: Interactive 5-Question Chess Quiz
+└── attestation-1/                     <- TSIS-1, TSIS-2, TSIS-3, TSIS-4 & Attestation 1
+    ├── index.html                     <- 5-section responsive site with mobile nav & challenge form
+    ├── css/styles.css                 <- Seed palette, strict Box Model, CSS Grid & Flexbox
+    ├── js/main.js                     <- Mobile nav drawer toggle & challenge form interception
+    ├── images/                        <- Board tournament images
+    └── README.md                      <- Technical documentation & defense answers
 ```
 
 ---
 
-## TSIS Milestones Summary & Defence Answers
+## Summary of All Completed SIS and TSIS Tasks (Weeks 1 to 11)
 
-### TSIS-1 · Week 2 · Setup & First Page (1.5 pts)
-- **Demo Requirements:** VS Code project folder structure initialized, `index.html` rendered in browser, GitHub repository tracked, README with name/ID/niche/seed.
-- **Defence Question Answers:**
-  - *Q: What is the difference between `<div>` and `<section>`?*  
-    **A:** A `<section>` is a semantic HTML5 landmark tag indicating a thematic grouping of content with its own heading, aiding screen readers and search engines. A `<div>` is a generic non-semantic container used purely for styling and CSS layout grouping.
-  - *Q: Where will your watermark live?*  
-    **A:** In the persistent page footer (`<footer class="site-footer">`), styled with a monospace badge containing `CSE6624 | Khamzin Daniyal | 070301552252 | niche-23`.
-  - *Q: What is your niche and seed hue?*  
-    **A:** Niche #23 (*Chess club with online ladder*), Primary Hue = `43` (`hsl(43, 65%, 40%)`), Accent = `94` (`hsl(94, 70%, 45%)`).
+### Part A: Student Independent Study (SIS)
+1. **SIS-1 (Week 3): Digital Business Card**
+   - Single-page card inside [`sis-week3-business-card/`](file:///Users/dan/Documents/Lectures/Web/sis-week3-business-card).
+   - Seed palette `--primary: hsl(43, 65%, 40%)` and `--accent: hsl(94, 70%, 45%)`.
+   - Contact block, custom chess knight emblem, and visible footer watermark.
+2. **SIS-2 (Week 6): CSS Art from Seed Colors**
+   - Pure CSS *Chess Rook (Castle)* inside [`sis-week6-css-art/`](file:///Users/dan/Documents/Lectures/Web/sis-week6-css-art) built using 6 HTML elements without external images.
+   - Flexbox layout with soft hover animation and seed color palette guide.
+3. **SIS-3 (Week 10): Interactive Niche Quiz**
+   - 5-question interactive quiz inside [`sis-week10-quiz/`](file:///Users/dan/Documents/Lectures/Web/sis-week10-quiz) built with vanilla JS and DOM.
+   - Dynamic answer buttons, score tracking, green/red answer highlighting, and play-again reset button.
 
-### TSIS-2 · Week 5 · CSS Layout Check (1.5 pts)
-- **Demo Requirements:** Flexbox navigation bar, centered hero banner with call-to-actions, 3-card Grid layout (`repeat(3, 1fr)`) showing tournament formats, DevTools Box Model check.
-- **Defence Question Answers:**
-  - *Q: When would you choose Grid over Flexbox?*  
-    **A:** Choose CSS Grid for two-dimensional layouts where alignment across both columns and rows is necessary (such as the 3 tournament cards grid). Choose Flexbox for one-dimensional layouts along a single axis (such as the header navigation bar distributing logo and links).
-  - *Q: How did seed colors enter your CSS?*  
-    **A:** In `:root` inside `css/styles.css` using `--primary: hsl(43, 65%, 40%)` and `--accent: hsl(94, 70%, 45%)`. All surface tints and borders reference these custom properties (`var(--primary)` and `var(--accent)`).
-  - *Q: What breaks on a narrow phone width right now?*  
-    **A:** Nothing breaks because responsive `@media` rules are included: at `900px` the card grid adjusts to 2 columns, and below `600px` it collapses to a single column while the header switches to a vertical flex column.
+---
+
+### Part B: Teacher Supervised Independent Study (TSIS) & Attestation 1
+All TSIS milestones live inside [`attestation-1/`](file:///Users/dan/Documents/Lectures/Web/attestation-1):
+1. **TSIS-1 (Week 2): First Page & Setup**
+   - Course structure setup, GitHub tracking, and semantic HTML shell.
+2. **TSIS-2 (Week 5): CSS Layout Check**
+   - Flexbox navigation, hero section, and 3-card tournament grid (`repeat(3, 1fr)`).
+3. **TSIS-3 (Week 8): Attestation 1 Progress**
+   - 5 navigable sections (Hero, Cards, Rules, Gallery, and Challenge Form).
+   - Working challenge form with labeled inputs and validation.
+   - 3 tournament photos with descriptive `alt` text.
+   - Responsive breakpoint (`@media (max-width: 768px)`).
+4. **TSIS-4 (Week 11): JS DOM Progress**
+   - Mobile navigation hamburger toggle (`classList.toggle("is-open")` with `aria-expanded`).
+   - Challenge form interception with `e.preventDefault()`, validation checks, and inline status feedback.
+   - Console logs student watermark on startup.
 
 ---
 
 ## AI Disclosure
 
-- **AI used for:** Assisting with layout scaffolding and markdown documentation.
-- **I rewrote/verified:** All CSS variables, HSL seed mathematics, Grid/Flexbox dimensions, Box Model rules, and niche chess tournament content.
+- **AI used for:** Assistance with scaffolding templates, verifying arithmetic calculations, and documentation structure.
+- **I rewrote/verified:** All HTML landmarks, CSS layout rules, DOM JavaScript functions, and niche-specific chess tournament copy.
