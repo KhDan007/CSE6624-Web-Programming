@@ -1,0 +1,99 @@
+/* styles.css for Week 11 Practice */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f7fafc;
+  color: #1a202c;
+  line-height: 1.5;
+  padding-bottom: 2rem;
+}
+
+header {
+  background-color: #1a365d;
+  color: #ffffff;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border-bottom: 3px solid #2b6cb0;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.35rem;
+}
+
+header p {
+  color: #bee3f8;
+  font-size: 0.95rem;
+}
+
+main {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.card-header h2 {
+  font-size: 1.25rem;
+  color: #2b6cb0;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background-color: #2b6cb0;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #1a365d;
+}
+
+.clubs-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.clubs-list li {
+  padding: 0.85rem 1rem;
+  background-color: #edf2f7;
+  border-left: 4px solid #2b6cb0;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #2d3748;
+}
+
+footer {
+  text-align: center;
+  color: #718096;
+  font-size: 0.85rem;
+  margin-top: 2rem;
+}
