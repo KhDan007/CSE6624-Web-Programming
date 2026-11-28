@@ -24,9 +24,13 @@ Watermark: CSE6624 | Khamzin Daniyal | 070301552252 | niche-23
 
 ---
 
+## Live Demo (GitHub Pages)
+- **Live Site:** https://khdan007.github.io/cse6624-exam-khamzin/
+- **Repository:** https://github.com/KhDan007/cse6624-exam-khamzin
+
 ## How to run
-1. Clone or extract the project directory `cse6624-exam-khamzin`.
-2. Open `index.html` directly in any modern browser (Chrome, Edge, Firefox, Safari) or right-click `index.html` &rarr; **Open with Live Server** in VS Code.
+1. Open the live GitHub Pages URL above on any desktop or mobile device, **or**
+2. Clone or extract the project directory `cse6624-exam-khamzin` and open `index.html` directly in any modern browser (Chrome, Edge, Firefox, Safari) or via **Open with Live Server** in VS Code.
 3. No build tools, Node.js, npm, or external dependencies are required. All assets and scripts are 100% self-contained and run completely offline.
 
 ---
@@ -81,6 +85,14 @@ Watermark: CSE6624 | Khamzin Daniyal | 070301552252 | niche-23
   - Reviewing FIDE Elo formula mathematical accuracy in JavaScript.
   - Structuring the oral defence rehearsal script and anticipated questions.
 - Every function, variable, CSS track, and DOM selector was written, reviewed, commented, and practiced for full live modification during oral defence.
+
+---
+
+## Image Credits
+All photographs are sourced from Wikimedia Commons under free licenses:
+- `assets/board1.jpg` — *Modern Fianchetto Setup. Chess game Staunton No. 6* (CC0 Public Domain, Wikimedia Commons).
+- `assets/board2.jpg` — *DGT 2010 digital chess clock* (CC BY-SA 3.0, Wikimedia Commons).
+- `assets/board3.jpg` — *Members of the CFHS chess team practicing for tournament* (CC BY-SA 4.0, Wikimedia Commons).
 
 ---
 

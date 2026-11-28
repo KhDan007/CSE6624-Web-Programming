@@ -49,56 +49,62 @@
         </p>
 
         <form id="challenge-form" novalidate>
-          <div class="form-group">
-            <label for="challenger-name">Your Full Name *</label>
-            <input type="text" id="challenger-name" placeholder="e.g. Daniyal Khamzin" required minlength="3" />
-            <small class="field-error" id="name-error" style="color: #e53e3e; font-size: 0.8rem;"></small>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="challenger-name">Your Full Name *</label>
+              <input type="text" id="challenger-name" placeholder="e.g. Daniyal Khamzin" required minlength="3" />
+              <small class="field-error" id="name-error"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="challenger-email">University / Personal Email *</label>
+              <input type="email" id="challenger-email" placeholder="e.g. d.khamzin@satbayev.university" required />
+              <small class="field-error" id="email-error"></small>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="challenger-email">University / Personal Email *</label>
-            <input type="email" id="challenger-email" placeholder="e.g. d.khamzin@satbayev.university" required />
-            <small class="field-error" id="email-error" style="color: #e53e3e; font-size: 0.8rem;"></small>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="challenger-division">Your Division *</label>
+              <select id="challenger-division" required>
+                <option value="">-- Select Division --</option>
+                <option value="Premier">Premier Division (2000+ Elo)</option>
+                <option value="Rapid">Rapid Division (1800-1999 Elo)</option>
+                <option value="Rising Star">Rising Star Division (&lt;1800 Elo)</option>
+              </select>
+              <small class="field-error" id="division-error"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="opponent-select">Target Opponent (Rung) *</label>
+              <select id="opponent-select" required>
+                <option value="">-- Choose Opponent --</option>
+                <option value="Khamzin Daniyal (Rung #1 · 2140)">Khamzin Daniyal (Rung #1 · 2140)</option>
+                <option value="Arman Serikbay (Rung #2 · 2085)">Arman Serikbay (Rung #2 · 2085)</option>
+                <option value="Nursultan Bolat (Rung #3 · 1950)">Nursultan Bolat (Rung #3 · 1950)</option>
+                <option value="Ilyas Kuanysh (Rung #4 · 1880)">Ilyas Kuanysh (Rung #4 · 1880)</option>
+                <option value="Temirlan Aliyev (Rung #5 · 1740)">Temirlan Aliyev (Rung #5 · 1740)</option>
+                <option value="Madina Saparova (Rung #6 · 1690)">Madina Saparova (Rung #6 · 1690)</option>
+              </select>
+              <small class="field-error" id="opponent-error"></small>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="challenger-division">Your Division *</label>
-            <select id="challenger-division" required>
-              <option value="">-- Select Division --</option>
-              <option value="Premier">Premier Division (2000+ Elo)</option>
-              <option value="Rapid">Rapid Division (1800-1999 Elo)</option>
-              <option value="Rising Star">Rising Star Division (&lt;1800 Elo)</option>
-            </select>
-            <small class="field-error" id="division-error" style="color: #e53e3e; font-size: 0.8rem;"></small>
-          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="match-date">Proposed Match Date &amp; Time *</label>
+              <input type="datetime-local" id="match-date" required />
+              <small class="field-error" id="date-error"></small>
+            </div>
 
-          <div class="form-group">
-            <label for="opponent-select">Target Opponent (Rung) *</label>
-            <select id="opponent-select" required>
-              <option value="">-- Choose Opponent --</option>
-              <option value="Khamzin Daniyal (Rung #1 · 2140)">Khamzin Daniyal (Rung #1 · 2140)</option>
-              <option value="Arman Serikbay (Rung #2 · 2085)">Arman Serikbay (Rung #2 · 2085)</option>
-              <option value="Nursultan Bolat (Rung #3 · 1950)">Nursultan Bolat (Rung #3 · 1950)</option>
-              <option value="Ilyas Kuanysh (Rung #4 · 1880)">Ilyas Kuanysh (Rung #4 · 1880)</option>
-              <option value="Temirlan Aliyev (Rung #5 · 1790)">Temirlan Aliyev (Rung #5 · 1790)</option>
-              <option value="Aruzhan Talgat (Rung #6 · 1720)">Aruzhan Talgat (Rung #6 · 1720)</option>
-            </select>
-            <small class="field-error" id="opponent-error" style="color: #e53e3e; font-size: 0.8rem;"></small>
-          </div>
-
-          <div class="form-group">
-            <label for="match-date">Proposed Match Date &amp; Time *</label>
-            <input type="datetime-local" id="match-date" required />
-            <small class="field-error" id="date-error" style="color: #e53e3e; font-size: 0.8rem;"></small>
-          </div>
-
-          <div class="form-group">
-            <label for="time-control">Time Control Format</label>
-            <select id="time-control">
-              <option value="Rapid 15+10">Official Club Rapid (15 min + 10s increment)</option>
-              <option value="Blitz 5+3">Blitz Derby (5 min + 3s increment)</option>
-              <option value="Classical 60+30">Classical Ladder Match (60 min + 30s)</option>
-            </select>
+            <div class="form-group">
+              <label for="time-control">Time Control Format</label>
+              <select id="time-control">
+                <option value="Rapid 15+10">Official Club Rapid (15 min + 10s increment)</option>
+                <option value="Blitz 5+3">Blitz Derby (5 min + 3s increment)</option>
+                <option value="Classical 60+30">Classical Ladder Match (60 min + 30s)</option>
+              </select>
+            </div>
           </div>
 
           <div class="form-group">
@@ -112,11 +118,11 @@
               I certify that I am within 3 rungs of my opponent and agree to standard FIDE touch-move arbitration rules. *
             </label>
           </div>
-          <small class="field-error" id="agree-error" style="color: #e53e3e; font-size: 0.8rem; display: block; margin-top: -0.5rem; margin-bottom: 1rem;"></small>
+          <small class="field-error" id="agree-error" style="margin-top: -0.5rem; margin-bottom: 1rem;"></small>
 
           <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
             <button type="submit" class="btn btn-primary">Dispatch Challenge Slip</button>
-            <button type="reset" class="btn btn-secondary" style="color: var(--text-muted); border-color: var(--border-color);">Clear Form</button>
+            <button type="reset" class="btn btn-outline">Clear Form</button>
           </div>
 
           <!-- Live JS feedback box -->

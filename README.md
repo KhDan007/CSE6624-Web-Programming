@@ -80,6 +80,8 @@ All TSIS milestones live inside [`attestation-1/`](file:///Users/dan/Documents/L
 
 ### Part C: Final Exam Project (40 points)
 The complete final exam project is located in [`cse6624-exam-khamzin/`](file:///Users/dan/Documents/Lectures/Web/cse6624-exam-khamzin):
+- **Live GitHub Pages:** https://khdan007.github.io/cse6624-exam-khamzin/
+- **Dedicated Exam Repository:** https://github.com/KhDan007/cse6624-exam-khamzin
 - **4 Multi-Page Static Site:** `index.html` (Home), `ladder.html` (Standings & Elo Calculator), `challenge.html` (Challenge Slip & Queue), `rules.html` (Bylaws & FAQ Accordion).
 - **Custom CSS3 (No Frameworks):** Pure custom CSS with `--primary: hsl(43, 65%, 40%)` and `--accent: hsl(94, 70%, 45%)`. Reflows from 3-column desktop grid &rarr; 2-column tablet &rarr; 1-column mobile (~375px) with zero horizontal overflow.
 - **JavaScript DOM Interactivity:**

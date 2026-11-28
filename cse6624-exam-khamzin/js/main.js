@@ -4,6 +4,26 @@
    Niche 23: Chess club with online ladder
 */
 
+// Safe localStorage wrapper with in-memory fallback (prevents crashes in strict private mode)
+const memoryFallback = {};
+
+function safeStorageGet(key) {
+  try {
+    return window.localStorage.getItem(key);
+  } catch (err) {
+    return Object.prototype.hasOwnProperty.call(memoryFallback, key) ? memoryFallback[key] : null;
+  }
+}
+
+function safeStorageSet(key, value) {
+  memoryFallback[key] = String(value);
+  try {
+    window.localStorage.setItem(key, String(value));
+  } catch (err) {
+    // Fallback already stored in memoryFallback if storage quota or privacy blocks write
+  }
+}
+
 // Run scripts after DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
   initThemeToggle();
@@ -22,24 +42,20 @@ function initThemeToggle() {
   const themeBtn = document.getElementById("theme-toggle");
   if (!themeBtn) return;
 
-  // Check saved theme or default to light
-  const savedTheme = localStorage.getItem("satbayev-ladder-theme");
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark-theme");
-    themeBtn.textContent = "☀️ Light";
-  } else {
-    themeBtn.textContent = "🌙 Dark";
+  function applyTheme(isDark) {
+    document.body.classList.toggle("dark-theme", isDark);
+    themeBtn.textContent = isDark ? "☀️ Light" : "🌙 Dark";
+    themeBtn.setAttribute("aria-pressed", String(isDark));
   }
 
+  // Check saved theme on initial page load
+  const savedTheme = safeStorageGet("satbayev-ladder-theme");
+  applyTheme(savedTheme === "dark");
+
   themeBtn.addEventListener("click", () => {
-    const isDark = document.body.classList.toggle("dark-theme");
-    if (isDark) {
-      localStorage.setItem("satbayev-ladder-theme", "dark");
-      themeBtn.textContent = "☀️ Light";
-    } else {
-      localStorage.setItem("satbayev-ladder-theme", "light");
-      themeBtn.textContent = "🌙 Dark";
-    }
+    const nextDark = !document.body.classList.contains("dark-theme");
+    applyTheme(nextDark);
+    safeStorageSet("satbayev-ladder-theme", nextDark ? "dark" : "light");
   });
 }
 
@@ -53,7 +69,7 @@ function initLadderFilters() {
   const filterBtns = document.querySelectorAll(".filter-btn");
   const cards = document.querySelectorAll(".ladder-card");
 
-  if (!cards.length) return; // Exit if not on ladder.html
+  if (!cards.length) return; // Exit safely if not on ladder.html
 
   let currentDivision = "all";
   let searchQuery = "";
@@ -76,7 +92,7 @@ function initLadderFilters() {
       }
     });
 
-    // Handle "no results found" helper message
+    // Handle "no results found" helper message dynamically
     let noResultsMsg = document.getElementById("no-results-msg");
     const ladderGrid = document.getElementById("ladder-grid");
 
@@ -93,12 +109,20 @@ function initLadderFilters() {
     }
   }
 
+  function setActiveButton(targetBtn) {
+    filterBtns.forEach((b) => {
+      const isMatch = b === targetBtn;
+      b.classList.toggle("active", isMatch);
+      b.setAttribute("aria-pressed", String(isMatch));
+    });
+  }
+
   // Division button click listener
   filterBtns.forEach((btn) => {
+    btn.setAttribute("aria-pressed", String(btn.classList.contains("active")));
     btn.addEventListener("click", () => {
-      filterBtns.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      currentDivision = btn.dataset.division;
+      setActiveButton(btn);
+      currentDivision = btn.dataset.division || "all";
       applyFilters();
     });
   });
@@ -119,15 +143,14 @@ function initLadderFilters() {
   if (paramDiv) {
     const targetBtn = document.querySelector(`.filter-btn[data-division="${paramDiv}"]`);
     if (targetBtn) {
-      filterBtns.forEach((b) => b.classList.remove("active"));
-      targetBtn.classList.add("active");
+      setActiveButton(targetBtn);
       currentDivision = paramDiv;
     }
   }
 
   if (paramSearch && searchInput) {
     searchInput.value = paramSearch;
-    searchQuery = paramSearch.toLowerCase();
+    searchQuery = paramSearch.trim().toLowerCase();
   }
 
   applyFilters();
@@ -148,11 +171,16 @@ function initEloCalculator() {
   const deltaDraw = document.getElementById("calc-delta-draw");
   const deltaLoss = document.getElementById("calc-delta-loss");
 
-  if (!ratingAInput || !ratingBInput) return; // Exit if not on ladder.html
+  if (!ratingAInput || !ratingBInput) return; // Exit safely if not on ladder.html
+
+  function parseRating(inputEl) {
+    const parsed = parseFloat(inputEl.value);
+    return Number.isFinite(parsed) && parsed > 0 ? parsed : 1500;
+  }
 
   function calculateElo() {
-    const rA = parseFloat(ratingAInput.value) || 1500;
-    const rB = parseFloat(ratingBInput.value) || 1500;
+    const rA = parseRating(ratingAInput);
+    const rB = parseRating(ratingBInput);
 
     // FIDE expected score formulas
     const expectedA = 1 / (1 + Math.pow(10, (rB - rA) / 400));
@@ -181,7 +209,7 @@ function initEloCalculator() {
    4. Form Validation & Persistent Queue (challenge.html)
    DEFENCE TIP: e.preventDefault() stops default page reload. We validate each
    field, display specific error tips, and on success store in localStorage
-   under 'satbayev-challenges'. We re-render the list dynamically.
+   under 'satbayev-ladder-challenges'. Clearing saves "[]" so empty stays empty.
    ========================================================================== */
 function initChallengeQueue() {
   const form = document.getElementById("challenge-form");
@@ -189,22 +217,25 @@ function initChallengeQueue() {
   const clearBtn = document.getElementById("clear-queue-btn");
   const feedback = document.getElementById("form-feedback");
 
-  if (!form || !queueList) return; // Exit if not on challenge.html
+  if (!form || !queueList) return; // Exit safely if not on challenge.html
 
   const STORAGE_KEY = "satbayev-ladder-challenges";
+  let keepSuccessBannerOnReset = false;
 
-  // Helper to load challenges from localStorage
+  // Safely load array from localStorage (prevents corrupted JSON / non-array crash)
   function getStoredChallenges() {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    const raw = safeStorageGet(STORAGE_KEY);
+    if (raw === null) return [];
     try {
-      return raw ? JSON.parse(raw) : [];
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : [];
     } catch (e) {
       return [];
     }
   }
 
-  // Pre-seed one sample challenge if queue is empty so examiner sees UI state
-  if (getStoredChallenges().length === 0) {
+  // Only pre-seed sample once when storage key does not exist yet (null)
+  if (safeStorageGet(STORAGE_KEY) === null) {
     const sample = [
       {
         id: 101,
@@ -213,12 +244,12 @@ function initChallengeQueue() {
         division: "Premier",
         opponent: "Arman Serikbay (Rung #2 · 2085)",
         date: "2026-12-01 16:00",
-        timeControl: "Official Club Rapid (15+10)",
+        timeControl: "Rapid 15+10",
         notes: "Board 1 in Room GUK 302",
         created: "16:30"
       }
     ];
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(sample));
+    safeStorageSet(STORAGE_KEY, JSON.stringify(sample));
   }
 
   // URL query parameter for demo success display (?demo=success)
@@ -226,6 +257,17 @@ function initChallengeQueue() {
     feedback.textContent = "Challenge slip successfully dispatched to Arman Serikbay (Rung #2 · 2085)! Added to the queue.";
     feedback.classList.add("success");
     feedback.style.display = "block";
+  }
+
+  // Escape HTML special characters before injecting text
+  function escapeHtml(val) {
+    if (val === null || val === undefined) return "";
+    return String(val)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
   }
 
   // Render queue into sidebar DOM
@@ -242,57 +284,60 @@ function initChallengeQueue() {
       const li = document.createElement("li");
       li.className = "queue-item";
       li.innerHTML = `
-        <div>
+        <div style="min-width: 0; padding-right: 0.75rem;">
           <strong>${escapeHtml(item.challenger)}</strong> vs <em>${escapeHtml(item.opponent)}</em>
-          <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;">
+          <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem; overflow-wrap: anywhere;">
             ${escapeHtml(item.division)} &bull; ${escapeHtml(item.timeControl)} &bull; ${escapeHtml(item.date)}
           </div>
         </div>
-        <button type="button" class="queue-del" data-index="${index}" title="Remove challenge">&times;</button>
+        <button type="button" class="queue-del" data-index="${index}" aria-label="Remove challenge" title="Remove challenge">&times;</button>
       `;
       queueList.appendChild(li);
     });
   }
 
-  // Helper to escape potential HTML characters for safety
-  function escapeHtml(str) {
-    if (!str) return "";
-    return str
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
-  }
-
-  // Delete challenge item handler
+  // Delete single challenge item handler (event delegation)
   queueList.addEventListener("click", (e) => {
-    if (e.target.classList.contains("queue-del")) {
-      const index = parseInt(e.target.dataset.index, 10);
-      const challenges = getStoredChallenges();
+    const delBtn = e.target.closest(".queue-del");
+    if (!delBtn) return;
+
+    const index = parseInt(delBtn.dataset.index, 10);
+    const challenges = getStoredChallenges();
+    if (Number.isInteger(index) && index >= 0 && index < challenges.length) {
       challenges.splice(index, 1);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(challenges));
+      safeStorageSet(STORAGE_KEY, JSON.stringify(challenges));
       renderQueue();
     }
   });
 
-  // Clear all button
+  // Clear all button saves empty array "[]" so queue stays cleared after reload
   if (clearBtn) {
     clearBtn.addEventListener("click", () => {
-      localStorage.removeItem(STORAGE_KEY);
+      safeStorageSet(STORAGE_KEY, JSON.stringify([]));
       renderQueue();
     });
   }
 
-  // Form submission handler with validation
+  // Clear field errors cleanly when user clicks "Clear Form"
+  form.addEventListener("reset", () => {
+    form.querySelectorAll(".field-error").forEach((el) => (el.textContent = ""));
+    if (!keepSuccessBannerOnReset && feedback) {
+      feedback.className = "form-feedback";
+      feedback.style.display = "none";
+      feedback.textContent = "";
+    }
+  });
+
+  // Form submission handler with client-side validation
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    // Reset error messages
-    const errorElements = form.querySelectorAll(".field-error");
-    errorElements.forEach((el) => (el.textContent = ""));
-    feedback.className = "form-feedback";
-    feedback.style.display = "none";
+    // Reset previous error messages
+    form.querySelectorAll(".field-error").forEach((el) => (el.textContent = ""));
+    if (feedback) {
+      feedback.className = "form-feedback";
+      feedback.style.display = "none";
+    }
 
     let isValid = true;
 
@@ -342,9 +387,11 @@ function initChallengeQueue() {
     }
 
     if (!isValid) {
-      feedback.textContent = "Please correct the highlighted errors before submitting.";
-      feedback.classList.add("error");
-      feedback.style.display = "block";
+      if (feedback) {
+        feedback.textContent = "Please correct the highlighted errors before submitting.";
+        feedback.classList.add("error");
+        feedback.style.display = "block";
+      }
       return;
     }
 
@@ -364,16 +411,20 @@ function initChallengeQueue() {
     // Save to localStorage
     const challenges = getStoredChallenges();
     challenges.unshift(newChallenge);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(challenges));
+    safeStorageSet(STORAGE_KEY, JSON.stringify(challenges));
 
     // Show positive feedback
-    feedback.textContent = `Challenge slip successfully dispatched to ${newChallenge.opponent}! Added to the queue.`;
-    feedback.classList.add("success");
-    feedback.style.display = "block";
+    if (feedback) {
+      feedback.textContent = `Challenge slip successfully dispatched to ${newChallenge.opponent}! Added to the queue.`;
+      feedback.classList.add("success");
+      feedback.style.display = "block";
+    }
 
-    // Re-render queue and clear form fields
+    // Re-render queue and reset form inputs while keeping success banner visible
     renderQueue();
+    keepSuccessBannerOnReset = true;
     form.reset();
+    keepSuccessBannerOnReset = false;
   });
 
   // Initial render on page load
