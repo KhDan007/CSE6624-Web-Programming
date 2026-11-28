@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Satbayev Chess Ladder — Ladder Standings & Elo Calculator</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Header Landmark with Shared Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <svg class="brand-icon" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" fill="var(--primary)" stroke="var(--accent)" stroke-width="2" />
+          <path d="M14 28 L26 28 C26 28 25 24 23 22 C21 20 23 17 23 14 C23 11 19 9 17 11 C15 12 15 15 13 17 C15 18 15 20 15 22 C15 24 13 26 14 28 Z" fill="#ffffff" />
+        </svg>
+        <span class="brand-title">Satbayev Chess Ladder</span>
+      </a>
+
+      <div class="nav-right">
+        <nav class="main-nav" aria-label="Primary Navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="ladder.html" class="nav-link active">Ladder Board</a></li>
+            <li><a href="challenge.html" class="nav-link">Challenge Match</a></li>
+            <li><a href="rules.html" class="nav-link">Bylaws & FAQ</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-btn" type="button" aria-label="Toggle theme">🌙 Dark</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <div class="section-heading">
+      <h1 class="page-title">Live Ladder Standings & Rating Arena</h1>
+      <p class="page-subtitle">Filter collegiate players by division or calculate matchup probabilities live.</p>
+    </div>
+
+    <!-- JS Feature 1: Filter & Search Toolbar -->
+    <div class="filter-toolbar">
+      <div class="search-wrap">
+        <input type="text" id="player-search" placeholder="Search players by name or specialty..." aria-label="Search players" />
+      </div>
+      <div class="filter-buttons">
+        <button type="button" class="filter-btn active" data-division="all">All Divisions</button>
+        <button type="button" class="filter-btn" data-division="premier">Premier</button>
+        <button type="button" class="filter-btn" data-division="rapid">Rapid</button>
+        <button type="button" class="filter-btn" data-division="rising">Rising Star</button>
+      </div>
+    </div>
+
+    <!-- 6 Player Cards Grid (CSS Grid: repeat(3, 1fr) with data-division) -->
+    <div class="cards-grid" id="ladder-grid">
+      <!-- Player 1 -->
+      <article class="ladder-card" data-division="premier">
+        <span class="card-badge">Rung #1 · Premier</span>
+        <h2 class="card-title">Khamzin Daniyal</h2>
+        <p class="card-text">Specialty: King's Indian Defense & aggressive Sicilian Najdorf lines. FIDE candidate master tier.</p>
+        <div class="card-meta">
+          <strong>Rating:</strong> 2140 Elo | <strong>Record:</strong> 18W - 2D - 1L
+        </div>
+      </article>
+
+      <!-- Player 2 -->
+      <article class="ladder-card" data-division="premier">
+        <span class="card-badge">Rung #2 · Premier</span>
+        <h2 class="card-title">Arman Serikbay</h2>
+        <p class="card-text">Specialty: Solid Catalan setups and deep rook endgame technique. Highly resilient in classical time controls.</p>
+        <div class="card-meta">
+          <strong>Rating:</strong> 2085 Elo | <strong>Record:</strong> 15W - 5D - 3L
+        </div>
+      </article>
+
+      <!-- Player 3 -->
+      <article class="ladder-card" data-division="rapid">
+        <span class="card-badge accent">Rung #3 · Rapid</span>
+        <h2 class="card-title">Nursultan Bolat</h2>
+        <p class="card-text">Specialty: Tactical Vienna Game and dynamic knight forks. Blitz specialist with rapid flag intuition.</p>
+        <div class="card-meta">
+          <strong>Rating:</strong> 1950 Elo | <strong>Record:</strong> 14W - 1D - 5L
+        </div>
+      </article>
+
+      <!-- Player 4 -->
+      <article class="ladder-card" data-division="rapid">
+        <span class="card-badge accent">Rung #4 · Rapid</span>
+        <h2 class="card-title">Ilyas Kuanysh</h2>
+        <p class="card-text">Specialty: French Defense Winawer and rapid queenside pawn expansion. Consistent top-5 contender.</p>
+        <div class="card-meta">
+          <strong>Rating:</strong> 1880 Elo | <strong>Record:</strong> 11W - 4D - 6L
+        </div>
+      </article>
+
+      <!-- Player 5 -->
+      <article class="ladder-card" data-division="rising">
+        <span class="card-badge">Rung #5 · Rising Star</span>
+        <h2 class="card-title">Temirlan Aliyev</h2>
+        <p class="card-text">Specialty: London System and careful prophylactic maneuvering. First-year rising collegiate talent.</p>
+        <div class="card-meta">
+          <strong>Rating:</strong> 1740 Elo | <strong>Record:</strong> 9W - 3D - 4L
+        </div>
+      </article>
+
+      <!-- Player 6 -->
+      <article class="ladder-card" data-division="rising">
+        <span class="card-badge">Rung #6 · Rising Star</span>
+        <h2 class="card-title">Madina Saparova</h2>
+        <p class="card-text">Specialty: Caro-Kann Classical and central pawn break timing. Rapidly climbing the campus rungs.</p>
+        <div class="card-meta">
+          <strong>Rating:</strong> 1690 Elo | <strong>Record:</strong> 8W - 2D - 5L
+        </div>
+      </article>
+    </div>
+
+    <!-- Empty search fallback -->
+    <p id="no-results" style="display: none; text-align: center; padding: 2.5rem; color: var(--text-muted);">
+      No ladder players matched your search criteria.
+    </p>
+
+    <!-- JS Feature 2: Interactive FIDE Elo Calculator / Match Simulator -->
+    <section class="calculator-box" id="elo-calc">
+      <h3>Interactive FIDE Elo Probability Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">
+        Compute official FIDE expected score formula: <code>E = 1 / (1 + 10^((Rb - Ra) / 400))</code> before scheduling a ladder challenge.
+      </p>
+
+      <div class="calc-grid">
+        <div class="calc-field">
+          <label for="calc-rating-a">Player A Rating (Elo)</label>
+          <input type="number" id="calc-rating-a" value="2140" min="800" max="3200" />
+        </div>
+        <div class="calc-field">
+          <label for="calc-rating-b">Player B Rating (Elo)</label>
+          <input type="number" id="calc-rating-b" value="1950" min="800" max="3200" />
+        </div>
+      </div>
+
+      <div class="calc-results" id="elo-results">
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.75rem;">
+          <div>
+            <strong>Player A Win Expectancy:</strong> <span id="calc-prob-a" style="color: var(--primary); font-weight: 800; font-size: 1.1rem;">--</span>
+          </div>
+          <div>
+            <strong>Player B Win Expectancy:</strong> <span id="calc-prob-b" style="color: var(--accent); font-weight: 800; font-size: 1.1rem;">--</span>
+          </div>
+        </div>
+        <div style="font-size: 0.88rem; color: var(--text-muted); border-top: 1px dashed var(--border-color); padding-top: 0.5rem;">
+          <strong>Player A Rating Shift (K=20):</strong> 
+          Win: <span id="calc-delta-win" style="color: #38a169; font-weight: 700;">--</span> | 
+          Draw: <span id="calc-delta-draw" style="color: var(--primary); font-weight: 700;">--</span> | 
+          Loss: <span id="calc-delta-loss" style="color: #e53e3e; font-weight: 700;">--</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Semantic Footer with Watermark -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-meta">Satbayev University Chess Club &middot; Online Ladder Division &middot; Almaty, Kazakhstan</p>
+      <p class="footer-lead">Arbitrated under official FIDE rapid pairing rules. Over-the-board club meets Saturdays 16:00 in GUK 302.</p>
+      <div class="watermark-wrapper">
+        <span class="watermark-label">Project Verification Watermark:</span>
+        <code class="watermark">CSE6624 | Khamzin Daniyal | 070301552252 | niche-23</code>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

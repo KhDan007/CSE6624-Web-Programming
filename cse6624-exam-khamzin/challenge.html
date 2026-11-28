@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Satbayev Chess Ladder — Challenge Match</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- Header Landmark with Shared Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <svg class="brand-icon" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" fill="var(--primary)" stroke="var(--accent)" stroke-width="2" />
+          <path d="M14 28 L26 28 C26 28 25 24 23 22 C21 20 23 17 23 14 C23 11 19 9 17 11 C15 12 15 15 13 17 C15 18 15 20 15 22 C15 24 13 26 14 28 Z" fill="#ffffff" />
+        </svg>
+        <span class="brand-title">Satbayev Chess Ladder</span>
+      </a>
+
+      <div class="nav-right">
+        <nav class="main-nav" aria-label="Primary Navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="ladder.html" class="nav-link">Ladder Board</a></li>
+            <li><a href="challenge.html" class="nav-link active">Challenge Match</a></li>
+            <li><a href="rules.html" class="nav-link">Bylaws & FAQ</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-btn" type="button" aria-label="Toggle theme">🌙 Dark</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <div class="section-heading">
+      <h1 class="page-title">Issue an Official Ladder Challenge</h1>
+      <p class="page-subtitle">Submit your match slip. Challenges are validated client-side and saved to your browser session.</p>
+    </div>
+
+    <!-- 2-column layout: Form (1.2fr) vs Queue/Checklist (1fr) -->
+    <div class="form-layout-grid">
+      <!-- Challenge Form Card -->
+      <section class="form-card">
+        <h2 style="font-size: 1.4rem; color: var(--primary); margin-bottom: 0.5rem;">Match Slip Form</h2>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+          Please complete all required fields. Under club bylaws, you may only challenge players up to 3 rungs above you.
+        </p>
+
+        <form id="challenge-form" novalidate>
+          <div class="form-group">
+            <label for="challenger-name">Your Full Name *</label>
+            <input type="text" id="challenger-name" placeholder="e.g. Daniyal Khamzin" required minlength="3" />
+            <small class="field-error" id="name-error" style="color: #e53e3e; font-size: 0.8rem;"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="challenger-email">University / Personal Email *</label>
+            <input type="email" id="challenger-email" placeholder="e.g. d.khamzin@satbayev.university" required />
+            <small class="field-error" id="email-error" style="color: #e53e3e; font-size: 0.8rem;"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="challenger-division">Your Division *</label>
+            <select id="challenger-division" required>
+              <option value="">-- Select Division --</option>
+              <option value="Premier">Premier Division (2000+ Elo)</option>
+              <option value="Rapid">Rapid Division (1800-1999 Elo)</option>
+              <option value="Rising Star">Rising Star Division (&lt;1800 Elo)</option>
+            </select>
+            <small class="field-error" id="division-error" style="color: #e53e3e; font-size: 0.8rem;"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="opponent-select">Target Opponent (Rung) *</label>
+            <select id="opponent-select" required>
+              <option value="">-- Choose Opponent --</option>
+              <option value="Khamzin Daniyal (Rung #1 · 2140)">Khamzin Daniyal (Rung #1 · 2140)</option>
+              <option value="Arman Serikbay (Rung #2 · 2085)">Arman Serikbay (Rung #2 · 2085)</option>
+              <option value="Nursultan Bolat (Rung #3 · 1950)">Nursultan Bolat (Rung #3 · 1950)</option>
+              <option value="Ilyas Kuanysh (Rung #4 · 1880)">Ilyas Kuanysh (Rung #4 · 1880)</option>
+              <option value="Temirlan Aliyev (Rung #5 · 1790)">Temirlan Aliyev (Rung #5 · 1790)</option>
+              <option value="Aruzhan Talgat (Rung #6 · 1720)">Aruzhan Talgat (Rung #6 · 1720)</option>
+            </select>
+            <small class="field-error" id="opponent-error" style="color: #e53e3e; font-size: 0.8rem;"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="match-date">Proposed Match Date &amp; Time *</label>
+            <input type="datetime-local" id="match-date" required />
+            <small class="field-error" id="date-error" style="color: #e53e3e; font-size: 0.8rem;"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="time-control">Time Control Format</label>
+            <select id="time-control">
+              <option value="Rapid 15+10">Official Club Rapid (15 min + 10s increment)</option>
+              <option value="Blitz 5+3">Blitz Derby (5 min + 3s increment)</option>
+              <option value="Classical 60+30">Classical Ladder Match (60 min + 30s)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="match-notes">Match Notes / Venue Preference (Optional)</label>
+            <textarea id="match-notes" rows="3" placeholder="e.g. Satbayev GUK room 302 or Lichess verified room"></textarea>
+          </div>
+
+          <div class="form-group" style="display: flex; gap: 0.5rem; align-items: flex-start;">
+            <input type="checkbox" id="rules-agree" style="width: auto; margin-top: 0.25rem;" required />
+            <label for="rules-agree" style="font-weight: normal; font-size: 0.88rem;">
+              I certify that I am within 3 rungs of my opponent and agree to standard FIDE touch-move arbitration rules. *
+            </label>
+          </div>
+          <small class="field-error" id="agree-error" style="color: #e53e3e; font-size: 0.8rem; display: block; margin-top: -0.5rem; margin-bottom: 1rem;"></small>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <button type="submit" class="btn btn-primary">Dispatch Challenge Slip</button>
+            <button type="reset" class="btn btn-secondary" style="color: var(--text-muted); border-color: var(--border-color);">Clear Form</button>
+          </div>
+
+          <!-- Live JS feedback box -->
+          <div id="form-feedback" class="form-feedback" role="alert" aria-live="polite"></div>
+        </form>
+      </section>
+
+      <!-- Sidebar: Active Queue & Checklist -->
+      <aside>
+        <!-- Persistent Challenge Queue -->
+        <div class="queue-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+            <h2 style="font-size: 1.25rem; color: var(--primary);">Pending Challenges Queue</h2>
+            <button type="button" id="clear-queue-btn" class="queue-del" style="font-size: 0.8rem;">Clear All</button>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+            Challenges stored in <code>localStorage</code>. Persists across page refreshes.
+          </p>
+
+          <ul id="challenge-queue" class="queue-list" aria-live="polite">
+            <!-- Rendered dynamically by main.js -->
+          </ul>
+        </div>
+
+        <!-- Club Quick Tips -->
+        <div class="queue-card" style="margin-top: 1.5rem;">
+          <h3 style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.5rem;">Challenge Checklist</h3>
+          <ul style="padding-left: 1.2rem; font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+            <li><strong>3-Rung Cap:</strong> You cannot challenge someone >3 spots above you.</li>
+            <li><strong>48h Deadline:</strong> Defending player must respond within 48 hours.</li>
+            <li><strong>Color Choice:</strong> Defender picks piece color for game 1.</li>
+            <li><strong>Swap Rule:</strong> Challenger takes defender's rung on victory.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Semantic Footer with Watermark -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-meta">Satbayev University Chess Club &middot; Online Ladder Division &middot; Almaty, Kazakhstan</p>
+      <p class="footer-lead">Arbitrated under official FIDE rapid pairing rules. Over-the-board club meets Saturdays 16:00 in GUK 302.</p>
+      <div class="watermark-wrapper">
+        <span class="watermark-label">Project Verification Watermark:</span>
+        <code class="watermark">CSE6624 | Khamzin Daniyal | 070301552252 | niche-23</code>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

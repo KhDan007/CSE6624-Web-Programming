@@ -78,6 +78,21 @@ All TSIS milestones live inside [`attestation-1/`](file:///Users/dan/Documents/L
 
 ---
 
+### Part C: Final Exam Project (40 points)
+The complete final exam project is located in [`cse6624-exam-khamzin/`](file:///Users/dan/Documents/Lectures/Web/cse6624-exam-khamzin):
+- **4 Multi-Page Static Site:** `index.html` (Home), `ladder.html` (Standings & Elo Calculator), `challenge.html` (Challenge Slip & Queue), `rules.html` (Bylaws & FAQ Accordion).
+- **Custom CSS3 (No Frameworks):** Pure custom CSS with `--primary: hsl(43, 65%, 40%)` and `--accent: hsl(94, 70%, 45%)`. Reflows from 3-column desktop grid &rarr; 2-column tablet &rarr; 1-column mobile (~375px) with zero horizontal overflow.
+- **JavaScript DOM Interactivity:**
+  1. Live Standings Filter & Real-Time Search.
+  2. Interactive FIDE Elo match probability calculator ($E = 1 / (1 + 10^{(R_b - R_a) / 400})$).
+  3. Client-side form validation and persistent `localStorage` Challenge Queue.
+  4. Light / Dark theme toggle and accessible ARIA FAQ accordion.
+- **Defence Materials:** Full 5–7 min oral defence script and Q&A answers in [`DEFENCE_CHEATSHEET.md`](file:///Users/dan/Documents/Lectures/Web/cse6624-exam-khamzin/DEFENCE_CHEATSHEET.md).
+- **Screenshots:** 4 verification captures in [`screenshots/`](file:///Users/dan/Documents/Lectures/Web/cse6624-exam-khamzin/screenshots) (`vscode.png`, `mobile.png`, `filter-js.png`, `form-valid.png`).
+- **Archive:** Submission archive [`CSE6624_Exam_Khamzin_Daniyal.zip`](file:///Users/dan/Documents/Lectures/Web/CSE6624_Exam_Khamzin_Daniyal.zip).
+
+---
+
 ## AI Disclosure
 
 - **AI used for:** Assistance with scaffolding templates, verifying arithmetic calculations, and documentation structure.

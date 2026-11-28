@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Satbayev Chess Ladder — Bylaws & FAQ</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- Header Landmark with Shared Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <svg class="brand-icon" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" fill="var(--primary)" stroke="var(--accent)" stroke-width="2" />
+          <path d="M14 28 L26 28 C26 28 25 24 23 22 C21 20 23 17 23 14 C23 11 19 9 17 11 C15 12 15 15 13 17 C15 18 15 20 15 22 C15 24 13 26 14 28 Z" fill="#ffffff" />
+        </svg>
+        <span class="brand-title">Satbayev Chess Ladder</span>
+      </a>
+
+      <div class="nav-right">
+        <nav class="main-nav" aria-label="Primary Navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="ladder.html" class="nav-link">Ladder Board</a></li>
+            <li><a href="challenge.html" class="nav-link">Challenge Match</a></li>
+            <li><a href="rules.html" class="nav-link active">Bylaws & FAQ</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-btn" type="button" aria-label="Toggle theme">🌙 Dark</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <div class="section-heading">
+      <h1 class="page-title">Ladder Bylaws &amp; Member FAQ</h1>
+      <p class="page-subtitle">Official competition codes, challenge etiquette, and interactive membership answers.</p>
+    </div>
+
+    <!-- Core Bylaws Section -->
+    <section>
+      <div class="section-heading" style="margin-bottom: 1.5rem; text-align: left;">
+        <h2 style="font-size: 1.5rem;">Official Competition Rules</h2>
+        <p>Four governing articles established by the Satbayev University Chess Arbiters.</p>
+      </div>
+
+      <!-- CSS Grid: 3 columns on desktop, 2 on tablet, 1 on mobile -->
+      <div class="cards-grid">
+        <article class="feature-card">
+          <span class="card-badge">Article 1</span>
+          <h3 class="card-title">The Three-Rung Principle</h3>
+          <p class="card-text">
+            Challengers may only issue match slips to players seated 1, 2, or 3 rungs directly above them. 
+            Skipping rungs beyond 3 is forbidden to maintain ladder parity and steady progression.
+          </p>
+          <div class="card-meta">Maximum challenge delta: +3 rungs</div>
+        </article>
+
+        <article class="feature-card">
+          <span class="card-badge accent">Article 2</span>
+          <h3 class="card-title">48-Hour Response Window</h3>
+          <p class="card-text">
+            Once a match slip is recorded in the system, the defending player has 48 hours to confirm the time 
+            or offer an alternate slot within 7 calendar days. Unanswered slips result in a default forfeit.
+          </p>
+          <div class="card-meta">Failure to respond: 1 rung penalty</div>
+        </article>
+
+        <article class="feature-card">
+          <span class="card-badge">Article 3</span>
+          <h3 class="card-title">Rung Swap Mechanism</h3>
+          <p class="card-text">
+            If the challenger wins the match, they take the defender's ladder rung immediately, and the defender 
+            drops down by one rung. In the event of a draw or defender victory, all positions remain unchanged.
+          </p>
+          <div class="card-meta">Draw preserves incumbent rank</div>
+        </article>
+
+        <article class="feature-card">
+          <span class="card-badge accent">Article 4</span>
+          <h3 class="card-title">FIDE Touch-Move Enforcement</h3>
+          <p class="card-text">
+            All over-the-board club matches enforce FIDE Article 4 touch-move laws. If a player touches their piece, 
+            they must move it if legal. Clocks must be pressed with the same hand used to move.
+          </p>
+          <div class="card-meta">Zero electronic devices during play</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Interactive FAQ Accordion Section -->
+    <section style="margin-top: 3.5rem;">
+      <div class="section-heading" style="margin-bottom: 1.5rem; text-align: left;">
+        <h2 style="font-size: 1.5rem;">Interactive Member FAQ</h2>
+        <p>Click any topic below to expand answers. State is toggled via accessible JavaScript.</p>
+      </div>
+
+      <div class="accordion" id="faq-accordion">
+        <!-- Item 1 -->
+        <div class="accordion-item">
+          <button class="accordion-header" type="button" aria-expanded="false" aria-controls="faq-ans-1">
+            <span>How do new students get placed on the ladder?</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div id="faq-ans-1" class="accordion-content">
+            <p>
+              Students with verified FIDE or Chess.com ratings (above 1600) are seeded directly at the base of their corresponding division. Unrated students play two 15-minute evaluation blitz games during our Saturday meeting in GUK Room 302 to earn an initial provisional ladder rung.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="accordion-item">
+          <button class="accordion-header" type="button" aria-expanded="false" aria-controls="faq-ans-2">
+            <span>Can ladder matches be played online on Lichess?</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div id="faq-ans-2" class="accordion-content">
+            <p>
+              Yes! If both players cannot meet on campus, matches can be contested in the official Satbayev Chess Club team on Lichess. Both players must share their game PGN link in the challenge slip confirmation for Elo verification.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="accordion-item">
+          <button class="accordion-header" type="button" aria-expanded="false" aria-controls="faq-ans-3">
+            <span>How is Elo rating updated after a ladder match?</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div id="faq-ans-3" class="accordion-content">
+            <p>
+              We apply standard FIDE ratings formulas using a K-factor of 20 for undergraduate students and 10 for titled players. You can preview the exact rating shift and win probability using our interactive <a href="ladder.html#elo-calc" style="color: var(--primary); font-weight: 700;">Elo Calculator on the Ladder page</a>.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="accordion-item">
+          <button class="accordion-header" type="button" aria-expanded="false" aria-controls="faq-ans-4">
+            <span>What prizes do top ladder finishers receive each semester?</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div id="faq-ans-4" class="accordion-content">
+            <p>
+              The top 8 ladder players at the end of the semester earn automatic entry into the Satbayev University Blitz Championship, with university trophies, official tournament chess sets, and department sports scholarship recommendation points.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Campus Gallery -->
+    <section style="margin-top: 3.5rem;">
+      <div class="section-heading" style="margin-bottom: 1.5rem; text-align: left;">
+        <h2 style="font-size: 1.5rem;">Club Atmosphere &amp; Campus Equipment</h2>
+        <p>Our training room GUK 302 equipped with DGT digital clocks and weighted wooden boards.</p>
+      </div>
+
+      <div class="cards-grid">
+        <figure class="feature-card" style="padding: 1rem;">
+          <img src="assets/board1.jpg" alt="Tournament wooden chess pieces arranged on competition chessboard" style="border-radius: 8px; width: 100%; height: 200px; object-fit: cover;" />
+          <figcaption style="margin-top: 0.75rem; font-size: 0.88rem; color: var(--text-muted);">
+            <strong>Board One:</strong> German Knight Staunton weighted sets used for Premier division ladder matches.
+          </figcaption>
+        </figure>
+
+        <figure class="feature-card" style="padding: 1rem;">
+          <img src="assets/board2.jpg" alt="Over-the-board chess clocks in Satbayev university playing hall" style="border-radius: 8px; width: 100%; height: 200px; object-fit: cover;" />
+          <figcaption style="margin-top: 0.75rem; font-size: 0.88rem; color: var(--text-muted);">
+            <strong>Competition Hall:</strong> Room GUK 302 equipped with DGT 2010 FIDE digital timers.
+          </figcaption>
+        </figure>
+
+        <figure class="feature-card" style="padding: 1rem;">
+          <img src="assets/board3.jpg" alt="Active student chess match during weekly campus derby" style="border-radius: 8px; width: 100%; height: 200px; object-fit: cover;" />
+          <figcaption style="margin-top: 0.75rem; font-size: 0.88rem; color: var(--text-muted);">
+            <strong>Saturday Blitz:</strong> Students competing in rapid derby rounds to earn ladder promotion.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <!-- Semantic Footer with Watermark -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-meta">Satbayev University Chess Club &middot; Online Ladder Division &middot; Almaty, Kazakhstan</p>
+      <p class="footer-lead">Arbitrated under official FIDE rapid pairing rules. Over-the-board club meets Saturdays 16:00 in GUK 302.</p>
+      <div class="watermark-wrapper">
+        <span class="watermark-label">Project Verification Watermark:</span>
+        <code class="watermark">CSE6624 | Khamzin Daniyal | 070301552252 | niche-23</code>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

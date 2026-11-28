@@ -1,0 +1,692 @@
+/* styles.css - Exam Project
+   Student: Khamzin Daniyal (070301552252)
+   Niche 23: Chess club with online ladder
+   Seed: Hue = 43, Accent = 94
+*/
+
+:root {
+  /* Seed HSL calculations */
+  --seed-hue: 43;
+  --seed-accent: 94;
+
+  --primary: hsl(var(--seed-hue), 65%, 40%);
+  --primary-hover: hsl(var(--seed-hue), 65%, 32%);
+  --primary-light: hsl(var(--seed-hue), 65%, 94%);
+  --primary-surface: hsl(var(--seed-hue), 35%, 98%);
+
+  --accent: hsl(var(--seed-accent), 70%, 45%);
+  --accent-hover: hsl(var(--seed-accent), 70%, 36%);
+  --accent-light: hsl(var(--seed-accent), 70%, 92%);
+
+  /* Light theme default colors */
+  --bg-page: #f7fafc;
+  --bg-card: #ffffff;
+  --text-main: #1a202c;
+  --text-muted: #4a5568;
+  --border-color: #e2e8f0;
+  --footer-bg: #1a202c;
+  --footer-text: #cbd5e0;
+}
+
+/* Dark theme toggle using body class */
+body.dark-theme {
+  --bg-page: #12161a;
+  --bg-card: #1c2228;
+  --text-main: #f7fafc;
+  --text-muted: #a0aec0;
+  --border-color: #2d3748;
+  --primary-surface: #1a2026;
+  --primary-light: hsl(var(--seed-hue), 40%, 18%);
+  --footer-bg: #0b0e11;
+  --footer-text: #a0aec0;
+}
+
+/* Box model reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   Header & Flexbox Navigation (Flex is 1D: items along a single horizontal axis)
+   ========================================================================== */
+.site-header {
+  background-color: var(--bg-card);
+  border-bottom: 2px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.85rem 1.25rem;
+  /* Flexbox: easy space-between distribution for brand and menu */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.brand-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.brand-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.main-nav .nav-list {
+  display: flex;
+  list-style: none;
+  gap: 0.75rem;
+}
+
+.nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.4rem 0.65rem;
+  border-radius: 6px;
+  transition: color 0.15s, background-color 0.15s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary);
+  background-color: var(--primary-light);
+}
+
+/* Theme toggle button in header */
+.theme-btn {
+  background: var(--bg-page);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero-section {
+  background: linear-gradient(135deg, var(--primary) 0%, hsl(var(--seed-hue), 65%, 26%) 100%);
+  color: #ffffff;
+  padding: 4rem 1.5rem;
+  text-align: center;
+  border-bottom: 4px solid var(--accent);
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--accent-light);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
+  margin-bottom: 1.25rem;
+}
+
+.hero-headline {
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero-subtext {
+  font-size: 1.1rem;
+  color: #f1f5f9;
+  margin-bottom: 1.75rem;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Common Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Page Layout Wrappers & Headings
+   ========================================================================== */
+main {
+  flex: 1;
+}
+
+.page-container {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 1.25rem;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 2.25rem;
+}
+
+.section-heading h2,
+.page-title {
+  font-size: 2rem;
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.section-heading p,
+.page-subtitle {
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+  font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   GRID EXPLANATION FOR DEFENCE:
+   Grid is 2-dimensional (controls both columns & rows at once).
+   repeat(3, 1fr) gives 3 equal-width columns that stretch cleanly.
+   gap creates gutters between grid tracks without messy margin math.
+   ========================================================================== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal tracks across container */
+  gap: 1.5rem;                           /* gap between grid cells */
+}
+
+.feature-card,
+.ladder-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.feature-card:hover,
+.ladder-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+}
+
+.card-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.55rem;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+.card-badge.accent {
+  background-color: var(--accent-light);
+  color: var(--accent);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+  color: var(--text-main);
+}
+
+.card-text {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.card-meta {
+  border-top: 1px dashed var(--border-color);
+  padding-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Interactive Filter & Search Bar (Feature 1)
+   ========================================================================== */
+.filter-toolbar {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.search-wrap {
+  flex: 1;
+  min-width: 250px;
+}
+
+.search-wrap input {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background-color: var(--bg-page);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+/* ==========================================================================
+   Elo Calculator Widget (Feature 2)
+   ========================================================================== */
+.calculator-box {
+  background-color: var(--primary-surface);
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 3.5rem;
+}
+
+.calculator-box h3 {
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 0.35rem;
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.calc-field label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+.calc-field input {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background-color: var(--bg-card);
+  color: var(--text-main);
+}
+
+.calc-results {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   Form Section (Challenge Form + Pending Queue)
+   ========================================================================== */
+.form-layout-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* Form takes slightly wider column than queue */
+  gap: 2rem;
+}
+
+.form-card,
+.queue-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-family: inherit;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+}
+
+.form-feedback {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: none;
+}
+
+.form-feedback.success {
+  display: block;
+  background-color: var(--accent-light);
+  color: hsl(var(--seed-accent), 70%, 22%);
+  border-left: 4px solid var(--accent);
+}
+
+.form-feedback.error {
+  display: block;
+  background-color: #fff5f5;
+  color: #c53030;
+  border-left: 4px solid #e53e3e;
+}
+
+/* Queue List */
+.queue-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.queue-item {
+  padding: 0.85rem 1rem;
+  background-color: var(--bg-page);
+  border-left: 4px solid var(--primary);
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.queue-del {
+  background: transparent;
+  color: #e53e3e;
+  border: 1px solid #feb2b2;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+/* ==========================================================================
+   Accordion FAQ Section (Rules Page)
+   ========================================================================== */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.accordion-item {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 1.1rem 1.25rem;
+  text-align: left;
+  background: transparent;
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-header:hover {
+  background-color: var(--primary-light);
+}
+
+.accordion-content {
+  padding: 0 1.25rem 1.25rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  display: none;
+}
+
+.accordion-item.is-open .accordion-content {
+  display: block;
+}
+
+.accordion-icon {
+  font-size: 1.2rem;
+  color: var(--primary);
+  transition: transform 0.2s;
+}
+
+.accordion-item.is-open .accordion-icon {
+  transform: rotate(45deg);
+}
+
+/* ==========================================================================
+   Accessibility: Focus-visible outline
+   ========================================================================== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Footer & Mandatory Watermark
+   ========================================================================== */
+.site-footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 2.5rem 1.25rem;
+  border-top: 4px solid var(--primary);
+  margin-top: auto;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-meta {
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+.footer-lead {
+  font-size: 0.85rem;
+  color: #a0aec0;
+  margin-bottom: 1.25rem;
+}
+
+.watermark-wrapper {
+  margin-top: 0.5rem;
+}
+
+.watermark-label {
+  display: block;
+  font-size: 0.72rem;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.watermark {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--primary);
+  padding: 0.35rem 0.85rem;
+  border-radius: 4px;
+  border: 1px solid var(--accent);
+  display: inline-block;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS (Mobile-first reflow)
+   Desktop: 3 columns -> Tablet: 2 columns -> Mobile: 1 column
+   ========================================================================== */
+@media (max-width: 900px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-layout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .main-nav .nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.35rem;
+  }
+
+  .cards-grid,
+  .calc-grid {
+    grid-template-columns: 1fr; /* 1 column on phone width */
+  }
+
+  .hero-headline {
+    font-size: 1.85rem;
+  }
+}
