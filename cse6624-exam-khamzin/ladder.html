@@ -18,7 +18,10 @@
         <span class="brand-title">Satbayev Chess Ladder</span>
       </a>
 
-      <div class="nav-right">
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="site-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-right" id="site-menu">
         <nav class="main-nav" aria-label="Primary Navigation">
           <ul class="nav-list">
             <li><a href="index.html" class="nav-link">Home</a></li>
@@ -34,8 +37,8 @@
 
   <main class="page-container">
     <div class="section-heading">
-      <h1 class="page-title">Live Ladder Standings & Rating Arena</h1>
-      <p class="page-subtitle">Filter collegiate players by division or calculate matchup probabilities live.</p>
+      <h1 class="page-title">Sample Ladder Standings & Rating Arena</h1>
+      <p class="page-subtitle">Filter the sample players by division or calculate expected scores.</p>
     </div>
 
     <!-- JS Feature 1: Filter & Search Toolbar -->
@@ -116,9 +119,9 @@
 
     <!-- JS Feature 2: Interactive FIDE Elo Calculator / Match Simulator -->
     <section class="calculator-box" id="elo-calc">
-      <h3>Interactive FIDE Elo Probability Calculator</h3>
+      <h2>Interactive Elo Expected Score Calculator</h2>
       <p style="color: var(--text-muted); font-size: 0.95rem;">
-        Compute official FIDE expected score formula: <code>E = 1 / (1 + 10^((Rb - Ra) / 400))</code> before scheduling a ladder challenge.
+        Estimate expected score with the Elo formula: <code>E = 1 / (1 + 10^((Rb - Ra) / 400))</code> for a match. This is an illustrative model, not an official FIDE calculation.
       </p>
 
       <div class="calc-grid">
@@ -132,13 +135,14 @@
         </div>
       </div>
 
+      <p>Expected score includes the possibility of draws; it is not the probability of winning.</p>
       <div class="calc-results" id="elo-results">
         <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.75rem;">
           <div>
-            <strong>Player A Win Expectancy:</strong> <span id="calc-prob-a" style="color: var(--primary); font-weight: 800; font-size: 1.1rem;">--</span>
+            <strong>Player A Expected Score:</strong> <span id="calc-prob-a" style="color: var(--primary); font-weight: 800; font-size: 1.1rem;">--</span>
           </div>
           <div>
-            <strong>Player B Win Expectancy:</strong> <span id="calc-prob-b" style="color: var(--accent); font-weight: 800; font-size: 1.1rem;">--</span>
+            <strong>Player B Expected Score:</strong> <span id="calc-prob-b" style="color: var(--accent); font-weight: 800; font-size: 1.1rem;">--</span>
           </div>
         </div>
         <div style="font-size: 0.88rem; color: var(--text-muted); border-top: 1px dashed var(--border-color); padding-top: 0.5rem;">
@@ -154,8 +158,8 @@
   <!-- Semantic Footer with Watermark -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <p class="footer-meta">Satbayev University Chess Club &middot; Online Ladder Division &middot; Almaty, Kazakhstan</p>
-      <p class="footer-lead">Arbitrated under official FIDE rapid pairing rules. Over-the-board club meets Saturdays 16:00 in GUK 302.</p>
+      <p class="footer-meta">Satbayev Chess Ladder &middot; Student project &middot; Almaty, Kazakhstan</p>
+      <p class="footer-lead">A fictional chess club website created for the CSE6624 exam project.</p>
       <div class="watermark-wrapper">
         <span class="watermark-label">Project Verification Watermark:</span>
         <code class="watermark">CSE6624 | Khamzin Daniyal | 070301552252 | niche-23</code>

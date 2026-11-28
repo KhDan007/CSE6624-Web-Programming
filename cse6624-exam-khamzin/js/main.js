@@ -26,12 +26,40 @@ function safeStorageSet(key, value) {
 
 // Run scripts after DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
+  initMobileMenu();
   initThemeToggle();
   initLadderFilters();
   initEloCalculator();
   initChallengeQueue();
   initFaqAccordion();
 });
+
+// Keep navigation usable without JavaScript; enhance it only after setup.
+function initMobileMenu() {
+  const button = document.querySelector(".menu-toggle");
+  const menu = document.getElementById("site-menu");
+  if (!button || !menu) return;
+
+  const mobile = window.matchMedia("(max-width: 800px)");
+  function setOpen(open) {
+    button.setAttribute("aria-expanded", String(open));
+    button.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+    menu.inert = mobile.matches && !open;
+  }
+  function syncLayout() {
+    setOpen(false);
+  }
+  button.addEventListener("click", () => setOpen(button.getAttribute("aria-expanded") !== "true"));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && mobile.matches && button.getAttribute("aria-expanded") === "true") {
+      setOpen(false);
+      button.focus();
+    }
+  });
+  mobile.addEventListener("change", syncLayout);
+  document.body.classList.add("has-mobile-menu");
+  syncLayout();
+}
 
 /* ==========================================================================
    1. Theme Toggle with LocalStorage
@@ -186,7 +214,7 @@ function initEloCalculator() {
     const expectedA = 1 / (1 + Math.pow(10, (rB - rA) / 400));
     const expectedB = 1 - expectedA;
 
-    // K-factor = 20 (standard for collegiate FIDE rapid)
+    // Illustrative K-factor; official ratings depend on the player and regulations
     const k = 20;
     const changeWin = Math.round(k * (1 - expectedA));
     const changeDraw = Math.round(k * (0.5 - expectedA));
@@ -250,13 +278,6 @@ function initChallengeQueue() {
       }
     ];
     safeStorageSet(STORAGE_KEY, JSON.stringify(sample));
-  }
-
-  // URL query parameter for demo success display (?demo=success)
-  if (new URLSearchParams(window.location.search).get("demo") === "success" && feedback) {
-    feedback.textContent = "Challenge slip successfully dispatched to Arman Serikbay (Rung #2 · 2085)! Added to the queue.";
-    feedback.classList.add("success");
-    feedback.style.display = "block";
   }
 
   // Escape HTML special characters before injecting text
@@ -415,7 +436,7 @@ function initChallengeQueue() {
 
     // Show positive feedback
     if (feedback) {
-      feedback.textContent = `Challenge slip successfully dispatched to ${newChallenge.opponent}! Added to the queue.`;
+      feedback.textContent = `Challenge saved in this browser for ${newChallenge.opponent}. No message was sent.`;
       feedback.classList.add("success");
       feedback.style.display = "block";
     }

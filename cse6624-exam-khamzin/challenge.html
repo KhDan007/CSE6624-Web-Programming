@@ -19,7 +19,10 @@
         <span class="brand-title">Satbayev Chess Ladder</span>
       </a>
 
-      <div class="nav-right">
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="site-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-right" id="site-menu">
         <nav class="main-nav" aria-label="Primary Navigation">
           <ul class="nav-list">
             <li><a href="index.html" class="nav-link">Home</a></li>
@@ -35,8 +38,8 @@
 
   <main class="page-container">
     <div class="section-heading">
-      <h1 class="page-title">Issue an Official Ladder Challenge</h1>
-      <p class="page-subtitle">Submit your match slip. Challenges are validated client-side and saved to your browser session.</p>
+      <h1 class="page-title">Record a Ladder Challenge</h1>
+      <p class="page-subtitle">This demo saves challenges in your browser only. It does not send them to another player.</p>
     </div>
 
     <!-- 2-column layout: Form (1.2fr) vs Queue/Checklist (1fr) -->
@@ -45,20 +48,20 @@
       <section class="form-card">
         <h2 style="font-size: 1.4rem; color: var(--primary); margin-bottom: 0.5rem;">Match Slip Form</h2>
         <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem;">
-          Please complete all required fields. Under club bylaws, you may only challenge players up to 3 rungs above you.
+          Please complete all required fields. In this example club, players should challenge someone up to 3 rungs above them; the form relies on your confirmation.
         </p>
 
         <form id="challenge-form" novalidate>
           <div class="form-row">
             <div class="form-group">
               <label for="challenger-name">Your Full Name *</label>
-              <input type="text" id="challenger-name" placeholder="e.g. Daniyal Khamzin" required minlength="3" />
+              <input type="text" id="challenger-name" aria-describedby="name-error" placeholder="e.g. Daniyal Khamzin" required minlength="3" />
               <small class="field-error" id="name-error"></small>
             </div>
 
             <div class="form-group">
               <label for="challenger-email">University / Personal Email *</label>
-              <input type="email" id="challenger-email" placeholder="e.g. d.khamzin@satbayev.university" required />
+              <input type="email" id="challenger-email" aria-describedby="email-error" placeholder="e.g. d.khamzin@satbayev.university" required />
               <small class="field-error" id="email-error"></small>
             </div>
           </div>
@@ -66,7 +69,7 @@
           <div class="form-row">
             <div class="form-group">
               <label for="challenger-division">Your Division *</label>
-              <select id="challenger-division" required>
+              <select id="challenger-division" aria-describedby="division-error" required>
                 <option value="">-- Select Division --</option>
                 <option value="Premier">Premier Division (2000+ Elo)</option>
                 <option value="Rapid">Rapid Division (1800-1999 Elo)</option>
@@ -77,7 +80,7 @@
 
             <div class="form-group">
               <label for="opponent-select">Target Opponent (Rung) *</label>
-              <select id="opponent-select" required>
+              <select id="opponent-select" aria-describedby="opponent-error" required>
                 <option value="">-- Choose Opponent --</option>
                 <option value="Khamzin Daniyal (Rung #1 · 2140)">Khamzin Daniyal (Rung #1 · 2140)</option>
                 <option value="Arman Serikbay (Rung #2 · 2085)">Arman Serikbay (Rung #2 · 2085)</option>
@@ -93,7 +96,7 @@
           <div class="form-row">
             <div class="form-group">
               <label for="match-date">Proposed Match Date &amp; Time *</label>
-              <input type="datetime-local" id="match-date" required />
+              <input type="datetime-local" id="match-date" aria-describedby="date-error" required />
               <small class="field-error" id="date-error"></small>
             </div>
 
@@ -113,7 +116,7 @@
           </div>
 
           <div class="form-group" style="display: flex; gap: 0.5rem; align-items: flex-start;">
-            <input type="checkbox" id="rules-agree" style="width: auto; margin-top: 0.25rem;" required />
+            <input type="checkbox" id="rules-agree" aria-describedby="agree-error" style="width: auto; margin-top: 0.25rem;" required />
             <label for="rules-agree" style="font-weight: normal; font-size: 0.88rem;">
               I certify that I am within 3 rungs of my opponent and agree to standard FIDE touch-move arbitration rules. *
             </label>
@@ -121,7 +124,7 @@
           <small class="field-error" id="agree-error" style="margin-top: -0.5rem; margin-bottom: 1rem;"></small>
 
           <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-            <button type="submit" class="btn btn-primary">Dispatch Challenge Slip</button>
+            <button type="submit" class="btn btn-primary">Save Challenge</button>
             <button type="reset" class="btn btn-outline">Clear Form</button>
           </div>
 
@@ -139,7 +142,7 @@
             <button type="button" id="clear-queue-btn" class="queue-del" style="font-size: 0.8rem;">Clear All</button>
           </div>
           <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
-            Challenges stored in <code>localStorage</code>. Persists across page refreshes.
+            Saved on this device and retained across page refreshes.
           </p>
 
           <ul id="challenge-queue" class="queue-list" aria-live="polite">
@@ -164,8 +167,8 @@
   <!-- Semantic Footer with Watermark -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <p class="footer-meta">Satbayev University Chess Club &middot; Online Ladder Division &middot; Almaty, Kazakhstan</p>
-      <p class="footer-lead">Arbitrated under official FIDE rapid pairing rules. Over-the-board club meets Saturdays 16:00 in GUK 302.</p>
+      <p class="footer-meta">Satbayev Chess Ladder &middot; Student project &middot; Almaty, Kazakhstan</p>
+      <p class="footer-lead">A fictional chess club website created for the CSE6624 exam project.</p>
       <div class="watermark-wrapper">
         <span class="watermark-label">Project Verification Watermark:</span>
         <code class="watermark">CSE6624 | Khamzin Daniyal | 070301552252 | niche-23</code>
