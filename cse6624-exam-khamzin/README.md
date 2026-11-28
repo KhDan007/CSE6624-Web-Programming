@@ -102,3 +102,9 @@ The existing screenshots predate the latest changes and should be retaken after 
 2. `screenshots/mobile.png` — Chrome DevTools mobile device emulation (~375px) demonstrating 1-column responsive reflow.
 3. `screenshots/filter-js.png` — Interactive ladder standings filtered dynamically by division and search query.
 4. `screenshots/form-valid.png` — Challenge slip client-side validation error handling and successful submission queue item.
+
+## SIS-4 · Week 13 — Accessibility fix
+
+Open `sis-week13-a11y/index.html`. This chess club contact page recreates and repairs common accessibility issues: it provides a descriptive image alternative, associated form labels, a native keyboard-operable button, clear focus indicators, readable contrast, ordered headings, a skip link, and an on-page list explaining the fixes. The email address `chess@example.com` is a fictional placeholder; the form opens a draft in an email app and does not send it automatically. Seed colors and the student watermark are included.
+
+For submission, capture `screenshots/sis4-vscode.png` with the watermark visible in the source and `screenshots/sis4-devtools.png` with the watermark visible in the browser and DevTools open. Test the page with Tab, Enter, and Space. Screenshots must show the actual current work.

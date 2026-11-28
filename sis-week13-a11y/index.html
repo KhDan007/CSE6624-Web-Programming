@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chess club accessibility | Khamzin Daniyal 070301552252</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- CSE6624 | Khamzin Daniyal | 070301552252 | niche-23 -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <p class="eyebrow">Satbayev chess ladder</p>
+      <h1>Find your next chess game</h1>
+      <p>Visit a club session or prepare a question for the organisers.</p>
+    </div>
+  </header>
+
+  <main id="main" class="wrap" tabindex="-1">
+    <section class="intro" aria-labelledby="visit-heading">
+      <div>
+        <p class="eyebrow">Everyone is welcome</p>
+        <h2 id="visit-heading">Join us at the board</h2>
+        <p>New to chess or ready for a ladder match? Bring your questions and meet other players at a club session in Almaty.</p>
+        <p>Questions about the club? Use the form below to prepare an email.</p>
+      </div>
+      <img src="assets/board1.jpg" alt="Chess pieces arranged on a chessboard" width="480" height="320">
+    </section>
+
+    <section class="contact" aria-labelledby="contact-heading">
+      <div>
+        <p class="eyebrow">Get in touch</p>
+        <h2 id="contact-heading">Prepare a message</h2>
+        <p>Fill in the details below, then use the button to open your email app. Your message is not sent automatically.</p>
+      </div>
+      <form id="contact-form">
+        <label for="name">Your name</label>
+        <input id="name" name="name" autocomplete="name" required>
+        <label for="email">Your email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+        <label for="question">Your question</label>
+        <textarea id="question" name="question" rows="4" required></textarea>
+        <button type="submit">Open email draft</button>
+        <p id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="notes" aria-labelledby="notes-heading">
+      <h2 id="notes-heading">Accessibility notes</h2>
+      <ul>
+        <li>Added descriptive alternative text for the chess photo.</li>
+        <li>Connected each form label to its input and used a real button that works with Enter and Space.</li>
+        <li>Used dark text on light backgrounds and visible focus outlines for keyboard navigation.</li>
+        <li>Added a skip link and arranged headings in a clear order.</li>
+      </ul>
+    </section>
+  </main>
+  <footer><p>Satbayev University · CSE6624 Web Programming · Student Independent Study 4</p><p class="watermark">CSE6624 | Khamzin Daniyal | 070301552252 | niche-23</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
